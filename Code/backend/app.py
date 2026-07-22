@@ -136,9 +136,60 @@ def get_outbox():
         return jsonify({'error': str(e), 'trace': traceback.format_exc()}), 500
 
 
+@app.route('/api/run-pipeline', methods=['POST'])
+def run_pipeline():
+    import subprocess
+    import sys
+
+    try:
+        code_dir = BASE_DIR  # phase1.py et phase2.py sont dans le même dossier que app.py
+        phase1   = os.path.join(code_dir, 'phase1.py')
+        phase2   = os.path.join(code_dir, 'phase2.py')
+        # Le cwd doit être le dossier parent (Groupe ITP Projet/Code)
+        # pour que phase1.py calcule correctement son BASE_DIR
+        run_cwd  = os.path.dirname(code_dir)
+
+        # Vérification que les scripts existent
+        for script in [phase1, phase2]:
+            if not os.path.exists(script):
+                return jsonify({'error': f'Script introuvable : {script}'}), 404
+
+        # Exécuter phase1.py
+        result1 = subprocess.run(
+            [sys.executable, phase1],
+            capture_output=True, text=True, cwd=run_cwd
+        )
+        if result1.returncode != 0:
+            return jsonify({
+                'error': f'phase1.py a échoué',
+                'detail': result1.stderr
+            }), 500
+
+        # Exécuter phase2.py
+        result2 = subprocess.run(
+            [sys.executable, phase2],
+            capture_output=True, text=True, cwd=run_cwd
+        )
+        if result2.returncode != 0:
+            return jsonify({
+                'error': f'phase2.py a échoué',
+                'detail': result2.stderr
+            }), 500
+
+        return jsonify({
+            'message': 'phase1.py et phase2.py exécutés avec succès. Données mises à jour.',
+            'phase1_output': result1.stdout.strip(),
+            'phase2_output': result2.stdout.strip()
+        })
+
+    except Exception as e:
+        import traceback
+        return jsonify({'error': str(e), 'trace': traceback.format_exc()}), 500
+
+
 @app.route('/')
 def index():
-    return "<h2>Fournitex ADV - Backend API</h2><p>Routes: /api/dashboard-stats, /api/anomalies, /api/outbox</p>"
+    return "<h2>Fournitex ADV - Backend API</h2><p>Routes: /api/dashboard-stats, /api/anomalies, /api/outbox, /api/run-pipeline</p>"
 
 
 if __name__ == '__main__':

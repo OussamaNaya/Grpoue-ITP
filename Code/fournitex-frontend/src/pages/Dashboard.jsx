@@ -3,8 +3,11 @@ import { useState, useEffect } from 'react';
 export default function Dashboard() {
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [running, setRunning] = useState(false);
+  const [runMessage, setRunMessage] = useState(null);
 
-  useEffect(() => {
+  const loadStats = () => {
+    setLoading(true);
     fetch('/api/dashboard-stats')
       .then(res => res.json())
       .then(data => {
@@ -15,7 +18,30 @@ export default function Dashboard() {
         console.error("Failed to load stats", err);
         setLoading(false);
       });
-  }, []);
+  };
+
+  const handleRunPipeline = () => {
+    setRunning(true);
+    setRunMessage(null);
+    fetch('/api/run-pipeline', { method: 'POST' })
+      .then(res => res.json())
+      .then(data => {
+        setRunning(false);
+        if (data.error) {
+          setRunMessage({ type: 'error', text: `Erreur: ${data.error}` });
+        } else {
+          setRunMessage({ type: 'success', text: `✓ Pipeline terminé ! ${data.message}` });
+          loadStats();
+        }
+        setTimeout(() => setRunMessage(null), 5000);
+      })
+      .catch(err => {
+        setRunning(false);
+        setRunMessage({ type: 'error', text: 'Impossible de joindre le backend.' });
+      });
+  };
+
+  useEffect(() => { loadStats(); }, []);
 
   if (loading) {
     return <main className="p-8 max-w-[1440px] w-full mx-auto flex justify-center items-center h-[50vh]">Chargement...</main>;
@@ -37,10 +63,25 @@ export default function Dashboard() {
           <h3 className="text-[36px] font-bold text-on-surface leading-tight">Tableau de bord</h3>
           <p className="text-[16px] text-on-surface-variant mt-2">Suivi en temps réel de votre poste client et des actions de recouvrement.</p>
         </div>
-        <button className="bg-primary text-white px-6 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition-all flex items-center gap-2">
-          <span className="material-symbols-outlined text-[18px]">sync</span>
-          Lancer Calculs
-        </button>
+        <div className="flex flex-col items-end gap-2">
+          {runMessage && (
+            <span className={`text-xs font-semibold px-3 py-1 rounded-lg ${
+              runMessage.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
+            }`}>{runMessage.text}</span>
+          )}
+          <button
+            onClick={handleRunPipeline}
+            disabled={running}
+            className={`px-6 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-2 ${
+              running ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-primary text-white hover:opacity-90'
+            }`}
+          >
+            <span className={`material-symbols-outlined text-[18px] ${running ? 'animate-spin' : ''}`}>
+              {running ? 'sync' : 'play_arrow'}
+            </span>
+            {running ? 'Calcul en cours...' : 'Lancer Calculs'}
+          </button>
+        </div>
       </section>
 
       {/* Stats Grid */}

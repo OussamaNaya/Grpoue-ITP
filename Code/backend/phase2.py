@@ -3,9 +3,9 @@ import numpy as np
 from datetime import datetime
 import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA_DIR = os.path.join(BASE_DIR, 'Cahier des charges')
-OUTPUT_DIR = os.path.join(BASE_DIR, 'Code', 'output')
+BASE_DIR   = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+DATA_DIR   = os.path.join(BASE_DIR, 'Cahier des charges')
+OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'output')
 
 # Load data
 print("Chargement des données pour la Phase 2...")

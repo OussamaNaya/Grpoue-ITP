@@ -4,9 +4,11 @@ from datetime import datetime
 import os
 
 # Paths
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA_DIR = os.path.join(BASE_DIR, 'Cahier des charges')
-OUTPUT_DIR = os.path.join(BASE_DIR, 'Code', 'output')
+# backend/phase1.py est dans : Groupe ITP Projet/Code/backend/
+# On remonte 3 niveaux pour atteindre : Groupe ITP Projet/
+BASE_DIR   = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+DATA_DIR   = os.path.join(BASE_DIR, 'Cahier des charges')
+OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'output')
 
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
