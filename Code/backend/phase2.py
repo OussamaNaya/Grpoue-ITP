@@ -6,6 +6,10 @@ import os
 BASE_DIR   = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DATA_DIR   = os.path.join(BASE_DIR, 'Cahier des charges')
 OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'output')
+OUTBOX_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'outbox_simule')
+
+if not os.path.exists(OUTBOX_DIR):
+    os.makedirs(OUTBOX_DIR)
 
 # Load data
 print("Chargement des données pour la Phase 2...")
@@ -80,18 +84,67 @@ def format_message(row, col):
 relances_df['objet_email'] = relances_df.apply(lambda row: format_message(row, 'objet_modele'), axis=1)
 relances_df['corps_email'] = relances_df.apply(lambda row: format_message(row, 'corps_modele'), axis=1)
 
-# Export
+# Export Relances & Création Outbox physique
 cols_to_export = [
     'facture_id', 'client_id', 'raison_sociale', 'contact_email', 
     'jours_retard', 'code_modele', 'objet_email', 'corps_email'
 ]
 
+# 1. Dossier Outbox simulé
+print("Création physique des courriers dans l'outbox...")
+journal_entries = []
+timestamp_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+for _, row in relances_df.iterrows():
+    code = row['code_modele']
+    fact_id = row['facture_id']
+    client = row['raison_sociale']
+    
+    # Historique journal
+    journal_entries.append({
+        'horodatage': timestamp_str,
+        'facture_id': fact_id,
+        'client_id': row['client_id'],
+        'client_nom': client,
+        'action': code
+    })
+    
+    if code != 'TRANSFERT_RECOUVREMENT':
+        # Écriture du fichier texte simulé
+        filename = f"{code}_{fact_id}.txt"
+        filepath = os.path.join(OUTBOX_DIR, filename)
+        with open(filepath, 'w', encoding='utf-8') as f:
+            f.write(f"DESTINATAIRE : {row['contact_email']}\n")
+            f.write(f"OBJET : {row['objet_email']}\n")
+            f.write("--------------------------------------------------\n\n")
+            f.write(row['corps_email'])
+
+# 2. Fichier Transferts Recouvrement
+recouvrement_df = relances_df[relances_df['code_modele'] == 'TRANSFERT_RECOUVREMENT'].copy()
+recouvrement_path = os.path.join(OUTPUT_DIR, 'transferts_recouvrement.csv')
+if not recouvrement_df.empty:
+    recouvrement_df.to_csv(recouvrement_path, sep=';', index=False)
+elif os.path.exists(recouvrement_path):
+    os.remove(recouvrement_path) # Nettoyer si vide
+
+# 3. Journal des actions
+journal_df = pd.DataFrame(journal_entries)
+journal_path = os.path.join(OUTPUT_DIR, 'journal_actions.csv')
+if not journal_df.empty:
+    # Append au journal existant si présent
+    if os.path.exists(journal_path):
+        journal_df.to_csv(journal_path, sep=';', mode='a', header=False, index=False)
+    else:
+        journal_df.to_csv(journal_path, sep=';', index=False)
+
 output_path = os.path.join(OUTPUT_DIR, 'relances_a_envoyer.csv')
 relances_df[cols_to_export].to_csv(output_path, sep=';', index=False)
 
 print(f"\nPhase 2 terminée avec succès !")
-print(f"Total de {len(relances_df)} actions de relance générées.")
-print(f"Fichier sauvegardé dans {output_path}")
+print(f"Total de {len(relances_df)} actions générées (Journalisées dans {journal_path})")
+print(f"Les courriers simulés sont dans le dossier : {OUTBOX_DIR}")
+if not recouvrement_df.empty:
+    print(f"{len(recouvrement_df)} dossiers transférés en recouvrement (dans {recouvrement_path})")
 
 counts = relances_df['code_modele'].value_counts()
 print("\nDétail des actions :")
