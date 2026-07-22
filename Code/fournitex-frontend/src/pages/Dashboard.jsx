@@ -1,6 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Dashboard() {
+  const [stats, setStats] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('/api/dashboard-stats')
+      .then(res => res.json())
+      .then(data => {
+        setStats(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error("Failed to load stats", err);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <main className="p-8 max-w-[1440px] w-full mx-auto flex justify-center items-center h-[50vh]">Chargement...</main>;
+  }
+
+  if (!stats) {
+    return <main className="p-8 max-w-[1440px] w-full mx-auto flex justify-center items-center h-[50vh] text-red-500">Erreur de chargement des données. L'API backend est-elle lancée ?</main>;
+  }
+
+  // Calculate percentages for distribution chart
+  const totalRelances = stats.relances_a_envoyer || 1;
+  const getPercent = (count) => `${((count || 0) / totalRelances * 100).toFixed(0)}%`;
+
   return (
     <main className="p-8 max-w-[1440px] w-full mx-auto">
       {/* Welcome Section */}
@@ -10,17 +38,17 @@ export default function Dashboard() {
           <p className="text-[16px] text-on-surface-variant mt-2">Suivi en temps réel de votre poste client et des actions de recouvrement.</p>
         </div>
         <button className="bg-primary text-white px-6 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition-all flex items-center gap-2">
-          <span className="material-symbols-outlined text-[18px]">add</span>
-          Nouvelle Action
+          <span className="material-symbols-outlined text-[18px]">sync</span>
+          Lancer Calculs
         </button>
       </section>
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <StatCard title="Factures en retard" value="65" icon="trending_up" detail="+12%" color="text-error" />
-        <StatCard title="Montant à recouvrer" value="45 200 €" icon="payments" detail="En attente" color="text-primary" />
-        <StatCard title="Anomalies bloquées" value="7" badge="CRITICAL" badgeColor="bg-error-container text-on-error-container" color="text-error" />
-        <StatCard title="Relances à envoyer" value="27" icon="history" detail="Aujourd'hui" color="text-tertiary-container" />
+        <StatCard title="Factures en retard" value={stats.factures_en_retard} icon="trending_up" detail="+0%" color="text-error" />
+        <StatCard title="Montant à recouvrer" value={stats.montant_a_recouvrer} icon="payments" detail="En attente" color="text-primary" />
+        <StatCard title="Anomalies bloquées" value={stats.anomalies_bloquees} badge={stats.anomalies_bloquees > 0 ? "CRITICAL" : "OK"} badgeColor={stats.anomalies_bloquees > 0 ? "bg-error-container text-on-error-container" : "bg-green-100 text-green-800"} color="text-error" />
+        <StatCard title="Relances à envoyer" value={stats.relances_a_envoyer} icon="history" detail="Aujourd'hui" color="text-tertiary-container" />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
@@ -33,22 +61,24 @@ export default function Dashboard() {
             </div>
           </div>
           <div className="space-y-6">
-            <ProgressBar label="Relance 1" count="13 dossiers" percent="48%" colorClass="bg-blue-500" />
-            <ProgressBar label="Relance 2" count="4 dossiers" percent="15%" colorClass="bg-orange-400" />
-            <ProgressBar label="Relance 3" count="6 dossiers" percent="22%" colorClass="bg-red-500" />
-            <ProgressBar label="Recouvrement contentieux" count="4 dossiers" percent="15%" colorClass="bg-gray-800" />
+            <ProgressBar label="Relance 1" count={`${stats.repartition['RELANCE_1'] || 0} dossiers`} percent={getPercent(stats.repartition['RELANCE_1'])} colorClass="bg-blue-500" />
+            <ProgressBar label="Relance 2" count={`${stats.repartition['RELANCE_2'] || 0} dossiers`} percent={getPercent(stats.repartition['RELANCE_2'])} colorClass="bg-orange-400" />
+            <ProgressBar label="Relance 3" count={`${stats.repartition['RELANCE_3'] || 0} dossiers`} percent={getPercent(stats.repartition['RELANCE_3'])} colorClass="bg-red-500" />
+            <ProgressBar label="Recouvrement contentieux" count={`${stats.repartition['TRANSFERT_RECOUVREMENT'] || 0} dossiers`} percent={getPercent(stats.repartition['TRANSFERT_RECOUVREMENT'])} colorClass="bg-gray-800" />
           </div>
         </div>
 
         {/* Recent Activity / Anomalies */}
         <div className="lg:col-span-5 flex flex-col gap-6">
           <div className="bg-white p-6 rounded-xl shadow-sm border border-outline-variant flex-1">
-            <h5 className="text-[18px] font-semibold text-on-surface mb-4">Alertes Anomalies</h5>
+            <h5 className="text-[18px] font-semibold text-on-surface mb-4">Aperçu Anomalies</h5>
             <div className="space-y-4">
-              <AlertCard icon="warning" title="IBAN Invalide - Facture #FA-2023-98" subtitle="Société Durant & Fils" colorClass="bg-red-50 border-red-500 text-red-700" />
-              <AlertCard icon="info" title="Adresse non vérifiée" subtitle="Alpha Tech Corp" colorClass="bg-blue-50 border-blue-500 text-blue-700" />
+              {stats.anomalies_bloquees > 0 ? (
+                <AlertCard icon="warning" title={`${stats.anomalies_bloquees} anomalies détectées`} subtitle="Action requise dans le centre des anomalies" colorClass="bg-red-50 border-red-500 text-red-700" />
+              ) : (
+                <AlertCard icon="check_circle" title="Aucune anomalie" subtitle="Toutes les données sont saines" colorClass="bg-green-50 border-green-500 text-green-700" />
+              )}
             </div>
-            <button className="w-full mt-4 text-primary text-sm font-semibold py-2 rounded-lg hover:bg-gray-50">Voir toutes les anomalies</button>
           </div>
         </div>
       </div>
