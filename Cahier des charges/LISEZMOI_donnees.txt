@@ -1,0 +1,17 @@
+DONNEES DE L'EPREUVE — FOURNITEX (fictif)
+==========================================
+Date de référence de l'épreuve : 2026-07-27 (tous les calculs d'échéance s'y rapportent).
+
+Contenu (CSV, séparateur ;) + dump SQL équivalent (fournitex_adv.sql) :
+- clients.csv           42 clients (conditions de paiement, remise contractuelle, segment)
+- factures.csv          141 factures (dont payées, non échues, échues à divers stades)
+- paiements.csv         75 paiements (attention : partiels, multiples, anomalies)
+- litiges.csv           3 litiges (un OUVERT bloque toute relance)
+- catalogue.csv         28 produits · grille_remises_volume.csv (paliers 10/50/200)
+- demandes_devis.csv    22 demandes en texte libre
+- modeles_courriers.csv 8 modèles (relances 1-3, recouvrement, devis FR/EN, clarification, alertes)
+
+Règles du jeu :
+- Données 100 % FICTIVES, à traiter comme réelles (c'est évalué).
+- Anomalies et cas limites VOLONTAIRES : les détecter/journaliser/traiter selon le CDC.
+- Le solde d'une facture = TTC - somme de ses paiements. Le CDC fait foi.

@@ -1,0 +1,29 @@
+reference;libelle;famille;prix_unitaire_ht;tva_pct
+PAP-A4-500;Ramette papier A4 80g (500 feuilles);PAPETERIE;4.90;20
+PAP-CAH-96;Cahier 96 pages grands carreaux;PAPETERIE;1.80;20
+PAP-STY-BL;Stylo bille bleu (boîte de 50);PAPETERIE;12.50;20
+PAP-MARK-4;Marqueurs effaçables (lot de 4);PAPETERIE;6.90;20
+PAP-ENV-DL;Enveloppes DL autocollantes (boîte 500);PAPETERIE;18.00;20
+PAP-CLAS-8;Classeurs A4 dos 8 cm (lot de 10);PAPETERIE;24.90;20
+MOB-CHA-ERG;Chaise de bureau ergonomique;MOBILIER;149.00;20
+MOB-BUR-140;Bureau plateau 140x70;MOBILIER;229.00;20
+MOB-CAI-3T;Caisson 3 tiroirs à roulettes;MOBILIER;89.00;20
+MOB-ARM-HT;Armoire haute à rideaux;MOBILIER;319.00;20
+MOB-LAMP-LED;Lampe de bureau LED;MOBILIER;34.90;20
+INF-ECR-24;Écran 24 pouces Full HD;INFORMATIQUE;119.00;20
+INF-CLA-SF;Clavier sans fil AZERTY;INFORMATIQUE;29.90;20
+INF-SOU-ERG;Souris ergonomique verticale;INFORMATIQUE;39.90;20
+INF-DOCK-USB;Station d'accueil USB-C;INFORMATIQUE;89.00;20
+INF-CAS-BT;Casque audio Bluetooth avec micro;INFORMATIQUE;59.00;20
+INF-WEB-HD;Webcam Full HD;INFORMATIQUE;49.00;20
+HYG-GEL-5L;Gel hydroalcoolique bidon 5 L;HYGIENE;22.00;20
+HYG-PAP-12;Papier toilette (colis 12 rouleaux);HYGIENE;8.90;20
+HYG-ESS-6;Essuie-mains (colis 6 bobines);HYGIENE;14.50;20
+HYG-SAV-CR;Savon crème recharge 1 L;HYGIENE;4.20;20
+CAF-CAP-100;Capsules café (boîte 100);CAFETERIA;29.00;20
+CAF-GOB-1000;Gobelets carton 20 cl (x1000);CAFETERIA;39.00;20
+CAF-THE-100;Thé assortiment (100 sachets);CAFETERIA;11.50;20
+CAF-SUC-1000;Bûchettes de sucre (x1000);CAFETERIA;9.90;20
+SEC-EXT-6KG;Extincteur poudre 6 kg;SECURITE;54.00;20
+SEC-TRO-PH;Trousse premiers secours;SECURITE;24.00;20
+SEC-GIL-JN;Gilets haute visibilité (lot de 10);SECURITE;19.90;20

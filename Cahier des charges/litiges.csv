@@ -1,0 +1,4 @@
+facture_id;date_ouverture;motif;statut
+FAC-2026-0133;2026-06-27;Marchandise endommagée à la livraison;OUVERT
+FAC-2026-0134;2026-05-28;Erreur de quantité — avoir refusé, facture confirmée;CLOS
+FAC-2026-0012;2026-04-28;Contestation tarif — résolu;CLOS

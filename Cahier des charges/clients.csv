@@ -1,0 +1,43 @@
+client_id;raison_sociale;contact_nom;contact_email;conditions_paiement;remise_contractuelle_pct;segment;actif
+CL-201;Ateliers Brossard;Claire Garcia;compta@ateliers.brossard.fr;30J;0;STANDARD;1
+CL-202;Menuiserie Lacan & Fils;David Lefèvre;compta@menuiserie.lacan.et.fils.fr;30J;0;GRAND_COMPTE;1
+CL-203;Garage Central Auto;Léa Benali;compta@garage.central.auto.fr;30J;2;STANDARD;1
+CL-204;Imprimerie Duplex;Julie Roche;compta@imprimerie.duplex.fr;30J;8;STANDARD;1
+CL-205;Cabinet Architek;Olivier Meyer;compta@cabinet.architek.fr;60J_FIN_DE_MOIS;3;STANDARD;1
+CL-206;Boulangerie Pains & Traditions;Karim Fontaine;compta@boulangerie.pains.et.traditions.fr;30J;8;STANDARD;1
+CL-207;Transports Rivoli;Paul Garcia;compta@transports.rivoli.fr;45J;3;STANDARD;1
+CL-208;Clinique Vétérinaire des Ormes;Thomas Lefèvre;compta@clinique.veterinaire.des.ormes.fr;45J;5;STANDARD;1
+CL-209;Studio Graphique Pixel;Marc Roche;compta@studio.graphique.pixel.fr;45J;3;STANDARD;1
+CL-210;Électricité Générale Volta;Léa Weber;compta@electricite.generale.volta.fr;45J;2;STANDARD;1
+CL-211;Plomberie Aquanet;Inès Meyer;compta@plomberie.aquanet.fr;60J_FIN_DE_MOIS;0;STANDARD;1
+CL-212;Restaurant Le Panorama;Thomas Fontaine;compta@restaurant.le.panorama.fr;30J;0;STANDARD;1
+CL-213;Hôtel des Voyageurs;Claire Lopez;compta@hotel.des.voyageurs.fr;30J;0;STANDARD;1
+CL-214;Pharmacie du Marché;Paul Petit;compta@pharmacie.du.marche.fr;45J;0;GRAND_COMPTE;1
+CL-215;Laboratoire BioSud;Paul Benali;compta@laboratoire.biosud.fr;60J_FIN_DE_MOIS;0;STANDARD;1
+CL-216;École de Musique Crescendo;Amel Dubois;compta@ecole.de.musique.crescendo.fr;30J;0;STANDARD;1
+CL-217;Auto-École Conduite Plus;Amel Lopez;compta@autoecole.conduite.plus.fr;30J;0;GRAND_COMPTE;1
+CL-218;Agence Immo Horizon;Lucas Rousseau;compta@agence.immo.horizon.fr;30J;5;STANDARD;1
+CL-219;Cabinet Comptable Fidex;Amel Lopez;compta@cabinet.comptable.fidex.fr;30J;2;GRAND_COMPTE;1
+CL-220;Salle de Sport Dynamik;Yanis Marchal;compta@salle.de.sport.dynamik.fr;60J_FIN_DE_MOIS;0;STANDARD;1
+CL-221;Coiffure Tendance;Marc Weber;compta@coiffure.tendance.fr;30J;8;STANDARD;1
+CL-222;Boucherie Charolaise;Olivier Silva;compta@boucherie.charolaise.fr;30J;8;STANDARD;1
+CL-223;Fleuriste Rose & Lys;Thomas Lopez;compta@fleuriste.rose.et.lys.fr;30J;0;GRAND_COMPTE;1
+CL-224;Librairie Papyrus;Paul Roche;compta@librairie.papyrus.fr;30J;2;GRAND_COMPTE;1
+CL-225;Opticien Vision Claire;Emma Fontaine;compta@opticien.vision.claire.fr;30J;0;STANDARD;1
+CL-226;Traiteur Saveurs & Co;Olivier Marchal;compta@traiteur.saveurs.et.co.fr;30J;3;STANDARD;1
+CL-227;Pressing Net Express;Hugo Marchal;compta@pressing.net.express.fr;30J;3;STANDARD;1
+CL-228;Institut Beauté Zen;Amel Dubois;compta@institut.beaute.zen.fr;60J_FIN_DE_MOIS;5;GRAND_COMPTE;1
+CL-229;Cabinet Dentaire Molaire;Nicolas Benali;compta@cabinet.dentaire.molaire.fr;30J;8;STANDARD;1
+CL-230;Charpente Boisvert;David Silva;compta@charpente.boisvert.fr;30J;2;STANDARD;1
+CL-231;Peinture Déco Colori;Emma Benali;compta@peinture.deco.colori.fr;30J;0;STANDARD;1
+CL-232;Serrurerie Sécurit;Marc Dubois;compta@serrurerie.securit.fr;45J;0;STANDARD;1
+CL-233;Paysagiste Vertparc;Nadia Roche;compta@paysagiste.vertparc.fr;30J;0;STANDARD;1
+CL-234;Informatique ProServ;Julie Moreau;compta@informatique.proserv.fr;45J;0;STANDARD;1
+CL-235;Sécurité Gardax;Yanis Blanc;compta@securite.gardax.fr;30J;0;STANDARD;1
+CL-236;Nettoyage CleanPro;Lucas Lopez;compta@nettoyage.cleanpro.fr;30J;0;STANDARD;1
+CL-237;Location Matériel Locabat;Marc Dubois;compta@location.materiel.locabat.fr;45J;2;STANDARD;1
+CL-238;Cabinet Avocats Lex & Partners;Thomas Fabre;compta@cabinet.avocats.lex.et.partners.fr;30J;3;STANDARD;1
+CL-239;Crèche Les Lutins;David Marchal;compta@creche.les.lutins.fr;45J;0;GRAND_COMPTE;1
+CL-240;Association Sport pour Tous;Julie Zidane;compta@association.sport.pour.tous.fr;45J;0;STANDARD;1
+CL-241;Mairie de Valbonne-sur-Cère;Olivier Roche;compta@mairie.de.valbonnesurcere.fr;45J;3;STANDARD;1
+CL-242;Domaine Viticole Les Coteaux;Olivier Blanc;compta@domaine.viticole.les.coteaux.fr;60J_FIN_DE_MOIS;8;GRAND_COMPTE;1

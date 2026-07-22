@@ -1,0 +1,8 @@
+facture_id;client_id;date_emission;date_echeance;montant_ht;tva_pct;montant_ttc;statut;conditions_paiement;date_echeance_calculee;somme_paiements;solde;type_anomalie;ttc_calcule
+FAC-2026-0042;CL-205;14/05/2026;31/07/2026;2350.81;20.0;2820.97;EMISE;60J_FIN_DE_MOIS;2026-07-31;2820.97;0.0;Facture en double;
+FAC-2026-0042;CL-205;14/05/2026;31/07/2026;999.99;20.0;1199.99;EMISE;60J_FIN_DE_MOIS;2026-07-31;2820.97;-1620.9799999999998;Facture en double;
+FAC-2026-0136;CL-236;07/06/2026;07/07/2026;1000.0;20.0;1150.0;EMISE;30J;2026-07-07;0.0;1150.0;Erreur calcul TTC;1200.0
+FAC-2026-0135;CL-231;17/06/2026;02/06/2026;640.0;20.0;768.0;EMISE;30J;2026-06-02;0.0;768.0;Echeance < Emission;768.0
+FAC-2026-0132;CL-219;02/06/2026;02/07/2026;500.0;20.0;600.0;EMISE;30J;2026-07-02;720.0;-120.0;Trop-perçu (Solde négatif);600.0
+FAC-2026-0042;CL-205;14/05/2026;31/07/2026;999.99;20.0;1199.99;EMISE;60J_FIN_DE_MOIS;2026-07-31;2820.97;-1620.9799999999998;Trop-perçu (Solde négatif);1199.99
+FAC-9999;;;;;;;;;;;;Paiement orphelin;
