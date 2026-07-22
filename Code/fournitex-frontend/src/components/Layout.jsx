@@ -24,11 +24,10 @@ export default function Layout({ children }) {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`flex items-center gap-3 px-6 py-3 transition-all duration-200 ${
-                  isActive
-                    ? 'border-l-4 border-primary bg-primary-container/20 text-primary font-medium'
-                    : 'text-on-surface hover:bg-surface-container-high'
-                }`}
+                className={`flex items-center gap-3 px-6 py-3 transition-all duration-200 ${isActive
+                  ? 'border-l-4 border-primary bg-primary-container/20 text-primary font-medium'
+                  : 'text-on-surface hover:bg-surface-container-high'
+                  }`}
               >
                 <span className="material-symbols-outlined">{item.icon}</span>
                 <span className="text-[16px]">{item.name}</span>
@@ -55,12 +54,12 @@ export default function Layout({ children }) {
         <header className="flex justify-between items-center w-full px-lg h-16 sticky top-0 bg-surface border-b border-outline-variant z-40">
           <div className="flex items-center gap-lg flex-1">
             <h2 className="text-[18px] font-semibold text-on-surface">Bonjour, Service ADV</h2>
-            <div className="relative w-full max-w-md ml-lg">
+            <div className="relative w-full max-w-md ml-lg cursor-pointer ml-12">
               <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
-              <input 
-                className="w-full bg-surface-container-low border border-outline-variant rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary focus:outline-none transition-all" 
-                placeholder="Rechercher un dossier, une facture..." 
-                type="text" 
+              <input
+                className="w-full bg-surface-container-low border border-outline-variant rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary focus:outline-none transition-all"
+                placeholder="Rechercher un dossier, une facture..."
+                type="text"
               />
             </div>
           </div>
