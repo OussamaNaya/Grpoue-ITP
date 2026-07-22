@@ -12,8 +12,8 @@ export default function Layout({ children }) {
   return (
     <div className="bg-background text-on-surface antialiased">
       {/* SideNavBar */}
-      <aside className="w-[260px] h-screen fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant flex flex-col py-lg z-50">
-        <div className="px-lg mb-xl">
+      <aside className="w-[260px] h-screen fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant flex flex-col pt-6 pb-4 z-50">
+        <div className="px-6 mb-8">
           <h1 className="text-[24px] font-bold text-primary leading-tight">Fournitex ADV</h1>
           <p className="text-[12px] text-on-surface-variant font-semibold mt-1 tracking-wider">COLLECTION & RECOVERY</p>
         </div>
@@ -24,9 +24,9 @@ export default function Layout({ children }) {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`flex items-center gap-3 px-4 py-3 transition-all duration-200 ${
+                className={`flex items-center gap-3 px-6 py-3 transition-all duration-200 ${
                   isActive
-                    ? 'border-l-4 border-primary bg-primary-container/20 text-primary scale-[0.98]'
+                    ? 'border-l-4 border-primary bg-primary-container/20 text-primary font-medium'
                     : 'text-on-surface hover:bg-surface-container-high'
                 }`}
               >
@@ -36,7 +36,7 @@ export default function Layout({ children }) {
             );
           })}
         </nav>
-        <div className="mt-auto px-lg border-t border-outline-variant pt-lg pb-6">
+        <div className="mt-auto px-6 border-t border-outline-variant pt-4">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold">
               SA
