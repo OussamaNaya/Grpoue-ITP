@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Anomalies Center - Fournitex ADV</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#eeefff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-dim": "#d8dadc",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#b4c5ff",
+                    "primary-container": "#2563eb",
+                    "on-secondary": "#ffffff",
+                    "surface-container": "#eceef0",
+                    "tertiary-fixed": "#ffdbcd",
+                    "on-surface": "#191c1e",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "secondary-fixed": "#d3e4fe",
+                    "surface-bright": "#f7f9fb",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#0053db",
+                    "on-tertiary-fixed": "#360f00",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "on-secondary-fixed": "#0b1c30",
+                    "on-primary-fixed": "#00174b",
+                    "secondary": "#505f76",
+                    "outline-variant": "#c3c6d7",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#434655",
+                    "inverse-surface": "#2d3133",
+                    "surface-variant": "#e0e3e5",
+                    "on-tertiary-container": "#ffede6",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "primary-fixed": "#dbe1ff",
+                    "primary": "#004ac6",
+                    "on-secondary-container": "#54647a",
+                    "surface": "#f7f9fb",
+                    "background": "#f7f9fb",
+                    "secondary-container": "#d0e1fb",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-primary": "#ffffff",
+                    "on-background": "#191c1e",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#eff1f3",
+                    "outline": "#737686",
+                    "surface-container-high": "#e6e8ea",
+                    "tertiary-container": "#bc4800",
+                    "surface-container-low": "#f2f4f6",
+                    "tertiary": "#943700",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "2xl": "48px",
+                    "xl": "32px",
+                    "lg": "24px",
+                    "base": "4px",
+                    "margin-mobile": "16px",
+                    "md": "16px",
+                    "sm": "8px",
+                    "gutter": "24px",
+                    "xs": "4px",
+                    "sidebar-width": "260px"
+            },
+            "fontFamily": {
+                    "title-sm": ["Inter"],
+                    "data-tabular": ["Inter"],
+                    "display-lg-mobile": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-base": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-caps": ["Inter"]
+            },
+            "fontSize": {
+                    "title-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "data-tabular": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "display-lg-mobile": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-base": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .card-elevation {
+            box-shadow: 0px 1px 3px rgba(0,0,0,0.05), 0px 4px 6px rgba(0,0,0,0.02);
+        }
+        .animate-pulse-subtle {
+            animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-subtle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.85; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex">
+<!-- SideNavBar Component -->
+<aside class="w-[260px] h-screen fixed left-0 top-0 bg-surface-container-low dark:bg-surface-container-lowest border-r border-outline-variant dark:border-outline flex flex-col h-full py-lg z-50">
+<!-- Brand Identity -->
+<div class="px-lg mb-xl">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary leading-none">Fournitex ADV</h1>
+<p class="text-[10px] font-label-caps uppercase tracking-widest text-on-surface-variant opacity-70">Collection &amp; Recovery</p>
+</div>
+</div>
+</div>
+<!-- Navigation items -->
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-secondary-container dark:text-on-secondary-fixed hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-base text-body-base">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-secondary-container dark:text-on-secondary-fixed hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="outbox">outbox</span>
+<span class="font-body-base text-body-base">Outbox</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 border-l-4 border-primary bg-secondary-container text-on-secondary-container dark:bg-on-secondary-fixed-variant dark:text-on-primary-fixed transition-all scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="warning" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="font-body-base text-body-base font-semibold">Anomalies Center</span>
+</a>
+</nav>
+<!-- User Profile Anchor -->
+<div class="px-lg mt-auto pt-lg border-t border-outline-variant">
+<div class="flex items-center gap-3 p-2 rounded-xl hover:bg-surface-container-high transition-all cursor-pointer">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="A professional corporate headshot of a financial manager for a debt recovery agency. The person is wearing a tailored navy blazer and white shirt, looking directly at the camera with a confident and helpful expression. The background is a blurred high-end office with soft natural lighting and minimalist decor. Professional studio photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZY2B_RSSV8J6VhHIib_lZIcvOix5Ia0X8u0YpR__NvZyHuhlrplRQwnhJ5DiDJjUutBveUKNZ8GcuTuqQwLLIJyYtQ0KVbttD0w4-ti-6c7qpauoqcH7NfnoqEfPjQKQlDux1hgUmUG33v0cDR3P7C2h-VCwvZim_rUvK2TpbChrQbFQObxAt75a8UfeuXFpUWN-Qhafx9bcTd-LPUAiTNS5czvjprZQaWaNiw5fiLy1E50-HrqMP"/>
+</div>
+<div class="flex-1 overflow-hidden">
+<p class="font-body-sm text-body-sm font-bold truncate">Marc Lefebvre</p>
+<p class="text-[11px] text-on-surface-variant truncate">Risk Manager</p>
+</div>
+<span class="material-symbols-outlined text-sm opacity-50">more_vert</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-[260px] flex-1 min-h-screen flex flex-col">
+<!-- TopNavBar Component -->
+<header class="bg-surface dark:bg-background border-b border-outline-variant dark:border-outline h-16 sticky top-0 z-40 flex items-center justify-between px-lg w-full">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 font-body-sm text-body-sm focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Rechercher une anomalie ou facture..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-all text-on-surface-variant relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-all text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant mx-2"></div>
+<div class="flex flex-col items-end">
+<span class="font-title-sm text-title-sm text-primary">Anomalies Center</span>
+<span class="text-[10px] uppercase tracking-tighter font-bold text-error">3 Alertes critiques</span>
+</div>
+</div>
+</header>
+<!-- Page Canvas -->
+<div class="p-lg max-w-[1440px] mx-auto w-full">
+<!-- Header Section -->
+<div class="mb-xl flex items-end justify-between">
+<div>
+<nav class="flex items-center gap-2 text-on-surface-variant mb-2">
+<span class="font-label-caps text-label-caps">Administration</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="font-label-caps text-label-caps text-primary">Centre des Anomalies</span>
+</nav>
+<h2 class="font-display-lg text-display-lg text-on-surface">Gestion des Anomalies Critiques</h2>
+<p class="font-body-base text-body-base text-on-surface-variant max-w-2xl mt-2">
+                        Le système a détecté des incohérences majeures nécessitant une intervention manuelle pour débloquer les cycles de facturation en attente.
+                    </p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 border border-outline-variant rounded-lg font-body-sm text-body-sm font-semibold hover:bg-surface-container-low transition-all">
+                        Tout exporter (CSV)
+                    </button>
+<button class="px-4 py-2 bg-primary text-on-primary rounded-lg font-body-sm text-body-sm font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">refresh</span> Re-analyser
+                    </button>
+</div>
+</div>
+<!-- Stats Overview - Mini Bento -->
+<div class="grid grid-cols-4 gap-lg mb-xl">
+<div class="bg-white p-lg rounded-xl card-elevation border-l-4 border-error">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase">Factures Bloquées</p>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-error">24</span>
+<span class="font-body-sm text-body-sm text-error font-semibold">+12% vs hier</span>
+</div>
+</div>
+<div class="bg-white p-lg rounded-xl card-elevation border-l-4 border-tertiary-container">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase">Erreurs Calcul</p>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-tertiary">08</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Stable</span>
+</div>
+</div>
+<div class="bg-white p-lg rounded-xl card-elevation border-l-4 border-primary">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase">Total à recouvrer</p>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-primary">124.5k€</span>
+</div>
+</div>
+<div class="bg-white p-lg rounded-xl card-elevation border-l-4 border-outline">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase">Temps moy. résolution</p>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg">4.2h</span>
+</div>
+</div>
+</div>
+<!-- Anomalies Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+<!-- Card 1: Critical Duplicate -->
+<div class="bg-white rounded-xl card-elevation flex flex-col border border-error-container relative overflow-hidden group transition-all hover:ring-2 hover:ring-error/20">
+<div class="absolute top-0 right-0 p-4">
+<span class="bg-error/10 text-error text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-tighter">Critique</span>
+</div>
+<div class="p-lg flex-1">
+<div class="w-12 h-12 bg-error-container text-on-error-container rounded-lg flex items-center justify-center mb-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">content_copy</span>
+</div>
+<h3 class="font-title-sm text-title-sm mb-2 text-on-surface">Facture en double détectée</h3>
+<p class="font-body-sm text-body-sm text-error font-bold mb-3 tracking-tight">ID: FAC-2026-0033</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                            Une duplication exacte (Montant, Client, Date) a été repérée avec la facture FAC-2026-0012. Le processus de recouvrement automatique est suspendu.
+                        </p>
+</div>
+<div class="p-lg bg-surface-container-low border-t border-outline-variant flex items-center justify-between">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-white bg-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-xs">priority_high</span>
+</div>
+</div>
+<button class="bg-error text-on-error px-4 py-2 rounded-lg font-body-sm text-body-sm font-bold shadow-sm hover:bg-on-error-container transition-all">Résoudre</button>
+</div>
+</div>
+<!-- Card 2: Calculation Error -->
+<div class="bg-white rounded-xl card-elevation flex flex-col border border-tertiary-container/30 relative overflow-hidden group transition-all hover:ring-2 hover:ring-tertiary/20">
+<div class="absolute top-0 right-0 p-4">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-tighter">Calcul</span>
+</div>
+<div class="p-lg flex-1">
+<div class="w-12 h-12 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-lg flex items-center justify-center mb-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calculate</span>
+</div>
+<h3 class="font-title-sm text-title-sm mb-2 text-on-surface">Erreur mathématique détectée</h3>
+<p class="font-body-sm text-body-sm text-tertiary font-bold mb-3 tracking-tight">ID: FAC-2026-0089</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                            Incohérence majeure : Le montant TTC ne correspond pas à la somme HT + TVA. Écart détecté de 45.30€.
+                        </p>
+</div>
+<div class="p-lg bg-surface-container-low border-t border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-[10px] text-on-surface-variant">Priorité Moyenne</span>
+</div>
+<button class="bg-tertiary text-on-tertiary px-4 py-2 rounded-lg font-body-sm text-body-sm font-bold shadow-sm hover:bg-tertiary-container transition-all">Résoudre</button>
+</div>
+</div>
+<!-- Card 3: Orphan Payment -->
+<div class="bg-white rounded-xl card-elevation flex flex-col border border-primary/20 relative overflow-hidden group transition-all hover:ring-2 hover:ring-primary/20">
+<div class="absolute top-0 right-0 p-4">
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-tighter">Réconciliation</span>
+</div>
+<div class="p-lg flex-1">
+<div class="w-12 h-12 bg-primary-fixed text-on-primary-fixed-variant rounded-lg flex items-center justify-center mb-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">question_mark</span>
+</div>
+<h3 class="font-title-sm text-title-sm mb-2 text-on-surface">Paiement orphelin</h3>
+<p class="font-body-sm text-body-sm text-primary font-bold mb-3 tracking-tight">REF: VIR-SEP-99210</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                            Un virement entrant de 1,200€ a été reçu sans facture correspondante ou référence de commande valide.
+                        </p>
+</div>
+<div class="p-lg bg-surface-container-low border-t border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-[10px] text-on-surface-variant">Attente Action</span>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-body-sm text-body-sm font-bold shadow-sm hover:bg-on-primary-fixed-variant transition-all">Résoudre</button>
+</div>
+</div>
+<!-- Card 4: Additional Mock Anomaly -->
+<div class="bg-white rounded-xl card-elevation flex flex-col border border-error-container/20 relative overflow-hidden group transition-all hover:opacity-80">
+<div class="absolute top-0 right-0 p-4">
+<span class="bg-surface-container-highest text-on-surface-variant text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-tighter">Banque</span>
+</div>
+<div class="p-lg flex-1">
+<div class="w-12 h-12 bg-surface-container-high text-on-surface-variant rounded-lg flex items-center justify-center mb-md">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<h3 class="font-title-sm text-title-sm mb-2 text-on-surface">RIB Client Invalide</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-bold mb-3 tracking-tight">CLIENT: SARL DUPONT</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                            Le format de l'IBAN renseigné pour le prélèvement automatique est invalide ou corrompu.
+                        </p>
+</div>
+<div class="p-lg bg-surface-container-low border-t border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-[10px] text-on-surface-variant">Action Requise</span>
+</div>
+<button class="bg-surface-variant text-on-surface px-4 py-2 rounded-lg font-body-sm text-body-sm font-bold hover:bg-surface-dim transition-all">Résoudre</button>
+</div>
+</div>
+</div>
+<!-- Contextual Help / Status -->
+<div class="mt-2xl bg-on-primary-fixed text-on-primary-container p-xl rounded-2xl flex items-center gap-xl relative overflow-hidden">
+<!-- Subtle background decoration -->
+<div class="absolute -right-20 -bottom-20 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
+<div class="flex-1 z-10">
+<h4 class="font-headline-md text-headline-md mb-2">Besoin d'aide pour la réconciliation ?</h4>
+<p class="font-body-base text-body-base opacity-80 max-w-xl">
+                        Notre IA d'analyse financière peut tenter une réconciliation automatique basée sur l'historique des transactions passées. Souhaitez-vous lancer l'assistant ?
+                    </p>
+</div>
+<div class="flex gap-4 z-10">
+<button class="px-6 py-3 bg-white text-primary font-bold rounded-xl hover:scale-105 transition-all">Lancer l'IA Assistant</button>
+<button class="px-6 py-3 border border-white/30 text-white font-bold rounded-xl hover:bg-white/10 transition-all">Documentation</button>
+</div>
+</div>
+</div>
+<!-- Footer spacing -->
+<footer class="mt-auto py-lg px-lg text-center border-t border-outline-variant/30 text-on-surface-variant">
+<p class="font-label-caps text-[10px] opacity-50 tracking-widest">© 2026 FOURNITEX ADV SYSTEM - PRECISION IN DEBT MANAGEMENT</p>
+</footer>
+</main>
+<script>
+        // Simple Micro-interactions
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.classList.add('scale-[0.98]');
+            });
+            button.addEventListener('mouseup', () => {
+                button.classList.remove('scale-[0.98]');
+            });
+        });
+
+        // Search Bar Focus Effect
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('ring-2', 'ring-primary/20');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('ring-2', 'ring-primary/20');
+        });
+    </script>
+</body></html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fournitex ADV - Outbox</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#eeefff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#b4c5ff",
+                        "primary-container": "#2563eb",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#eceef0",
+                        "tertiary-fixed": "#ffdbcd",
+                        "on-surface": "#191c1e",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "secondary-fixed": "#d3e4fe",
+                        "surface-bright": "#f7f9fb",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#0053db",
+                        "on-tertiary-fixed": "#360f00",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "on-secondary-fixed": "#0b1c30",
+                        "on-primary-fixed": "#00174b",
+                        "secondary": "#505f76",
+                        "outline-variant": "#c3c6d7",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#434655",
+                        "inverse-surface": "#2d3133",
+                        "surface-variant": "#e0e3e5",
+                        "on-tertiary-container": "#ffede6",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "primary-fixed": "#dbe1ff",
+                        "primary": "#004ac6",
+                        "on-secondary-container": "#54647a",
+                        "surface": "#f7f9fb",
+                        "background": "#f7f9fb",
+                        "secondary-container": "#d0e1fb",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-primary": "#ffffff",
+                        "on-background": "#191c1e",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#eff1f3",
+                        "outline": "#737686",
+                        "surface-container-high": "#e6e8ea",
+                        "tertiary-container": "#bc4800",
+                        "surface-container-low": "#f2f4f6",
+                        "tertiary": "#943700",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "2xl": "48px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "base": "4px",
+                        "margin-mobile": "16px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "sidebar-width": "260px"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .modal-backdrop {
+            background-color: rgba(15, 23, 42, 0.5);
+            backdrop-filter: blur(4px);
+        }
+        /* Custom scrollbar for data density */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex">
+<!-- SideNavBar Shell -->
+<aside class="w-[260px] h-screen fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant flex flex-col py-lg z-50">
+<div class="px-lg mb-xl">
+<h1 class="font-headline-md text-[24px] font-bold text-primary tracking-tight">Fournitex ADV</h1>
+<p class="text-on-secondary-container text-[14px] opacity-70">Collection &amp; Recovery</p>
+</div>
+<nav class="flex-1 flex flex-col gap-1 px-sm">
+<!-- Dashboard (Inactive) -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-secondary-container hover:bg-surface-container-high transition-colors duration-200 rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">dashboard</span>
+<span class="font-body-base text-[16px]">Dashboard</span>
+</a>
+<!-- Outbox (Active) -->
+<a class="flex items-center gap-3 px-4 py-3 border-l-4 border-primary bg-secondary-container text-on-secondary-container transition-all scale-[0.98] rounded-r-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">outbox</span>
+<span class="font-body-base text-[16px] font-semibold">Outbox</span>
+</a>
+<!-- Anomalies Center (Inactive) -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-secondary-container hover:bg-surface-container-high transition-colors duration-200 rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">warning</span>
+<span class="font-body-base text-[16px]">Anomalies Center</span>
+</a>
+</nav>
+<div class="mt-auto px-lg pt-lg border-t border-outline-variant">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full border border-outline-variant bg-surface-container-high object-cover" data-alt="A professional close-up portrait of a corporate financial manager in a modern office. The lighting is soft and natural, with a clean white and blue aesthetic. The manager is wearing a crisp white shirt and navy blazer, conveying trust and authority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcF8y4Z-47rwbS49c1_qMXWatUizB4LEt9IBbX1S7_1t1ZfHl5VQiU-of4exacCPKqv3iouxJfsL0bnxUJbIAfA5VxzTAlXDcjycE4Jvn8bEIdQBRO5mZi7Sdf_IUfpFz09LZ8Hz6twRWONgPZUyv_yN7Xs6gcXkU5dowHnJxMpYh3HvIexpeGTUtIMfBa9GgurL7jwoFhRqm8ZXeIzGaXakWrzLTEcw4GIDmuZ8076fuLXkdZlp_W"/>
+<div class="flex flex-col">
+<span class="text-[14px] font-semibold text-on-surface">Marc Lefebvre</span>
+<span class="text-[12px] text-on-surface-variant">Admin Manager</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-[260px] flex-1 min-h-screen flex flex-col">
+<!-- TopNavBar Shell -->
+<header class="h-16 flex justify-between items-center px-lg bg-surface border-b border-outline-variant sticky top-0 z-40">
+<div class="flex items-center gap-lg flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 text-[14px] focus:ring-2 focus:ring-primary/20" placeholder="Rechercher un client ou une facture..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</header>
+<section class="p-lg max-w-[1440px] w-full mx-auto">
+<!-- Header Section -->
+<div class="mb-xl flex justify-between items-end">
+<div>
+<h2 class="text-[28px] font-bold text-on-background tracking-tight">Outbox — Relances</h2>
+<p class="text-on-surface-variant mt-1">Gérez vos relances de paiement en attente et prévisualisez vos communications clients.</p>
+</div>
+<div class="flex gap-sm">
+<button class="flex items-center gap-2 px-4 py-2 bg-white border border-outline-variant rounded-lg text-on-surface font-semibold text-[14px] hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+                        Filtrer
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg font-semibold text-[14px] shadow-sm hover:brightness-110 transition-all">
+<span class="material-symbols-outlined text-[20px]">send</span>
+                        Tout envoyer
+                    </button>
+</div>
+</div>
+<!-- Dashboard Stats Summary -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-lg mb-xl">
+<div class="bg-white p-lg rounded-xl border border-outline-variant shadow-[0px_1px_3px_rgba(0,0,0,0.05)]">
+<span class="text-[12px] font-bold text-outline tracking-wider uppercase">En attente</span>
+<div class="text-[32px] font-bold text-primary mt-1">42</div>
+<div class="text-[14px] text-green-600 font-medium mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+                        +12% vs hier
+                    </div>
+</div>
+<div class="bg-white p-lg rounded-xl border border-outline-variant shadow-[0px_1px_3px_rgba(0,0,0,0.05)]">
+<span class="text-[12px] font-bold text-outline tracking-wider uppercase">Relance 1</span>
+<div class="text-[32px] font-bold text-on-surface mt-1">28</div>
+<div class="text-[14px] text-on-surface-variant mt-2 italic">Délai: 5-15 jours</div>
+</div>
+<div class="bg-white p-lg rounded-xl border border-outline-variant shadow-[0px_1px_3px_rgba(0,0,0,0.05)]">
+<span class="text-[12px] font-bold text-outline tracking-wider uppercase">Relance 2</span>
+<div class="text-[32px] font-bold text-on-surface mt-1">11</div>
+<div class="text-[14px] text-on-surface-variant mt-2 italic">Délai: 15-30 jours</div>
+</div>
+<div class="bg-white p-lg rounded-xl border border-outline-variant shadow-[0px_1px_3px_rgba(0,0,0,0.05)]">
+<span class="text-[12px] font-bold text-outline tracking-wider uppercase">Relance 3 (Critique)</span>
+<div class="text-[32px] font-bold text-error mt-1">3</div>
+<div class="text-[14px] text-error font-medium mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">priority_high</span>
+                        Action requise
+                    </div>
+</div>
+</div>
+<!-- Stylized Data Table -->
+<div class="bg-white rounded-xl border border-outline-variant shadow-[0px_4px_6px_rgba(0,0,0,0.02)] overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low border-b border-outline-variant">
+<tr>
+<th class="px-lg py-4 text-[12px] font-bold text-outline uppercase tracking-wider">Client</th>
+<th class="px-lg py-4 text-[12px] font-bold text-outline uppercase tracking-wider">ID Facture</th>
+<th class="px-lg py-4 text-[12px] font-bold text-outline uppercase tracking-wider">Retard (Jours)</th>
+<th class="px-lg py-4 text-[12px] font-bold text-outline uppercase tracking-wider">Niveau</th>
+<th class="px-lg py-4 text-[12px] font-bold text-outline uppercase tracking-wider text-right">Solde TTC</th>
+<th class="px-lg py-4 text-[12px] font-bold text-outline uppercase tracking-wider text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-[#eff6ff] transition-colors group">
+<td class="px-lg py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-[12px]">SN</div>
+<span class="font-semibold text-on-surface">Solenia Nord</span>
+</div>
+</td>
+<td class="px-lg py-4 text-[14px] text-on-surface-variant font-mono">#FAC-2023-0892</td>
+<td class="px-lg py-4 text-[14px] text-on-surface font-medium">8 jours</td>
+<td class="px-lg py-4">
+<span class="px-3 py-1 rounded-full text-[12px] font-bold bg-yellow-100 text-yellow-800 border border-yellow-200">Relance 1</span>
+</td>
+<td class="px-lg py-4 text-[14px] text-on-surface font-bold text-right">1 245,50 €</td>
+<td class="px-lg py-4 text-right">
+<button class="text-primary hover:underline text-[14px] font-semibold flex items-center gap-2 justify-end ml-auto" onclick="openModal('Solenia Nord', '1 245,50 €', 'Rappel amical de paiement')">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                                    Prévisualiser l'email
+                                </button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-[#eff6ff] transition-colors group">
+<td class="px-lg py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center text-secondary font-bold text-[12px]">GT</div>
+<span class="font-semibold text-on-surface">Global Tech SA</span>
+</div>
+</td>
+<td class="px-lg py-4 text-[14px] text-on-surface-variant font-mono">#FAC-2023-0741</td>
+<td class="px-lg py-4 text-[14px] text-on-surface font-medium">19 jours</td>
+<td class="px-lg py-4">
+<span class="px-3 py-1 rounded-full text-[12px] font-bold bg-orange-100 text-orange-800 border border-orange-200">Relance 2</span>
+</td>
+<td class="px-lg py-4 text-[14px] text-on-surface font-bold text-right">4 890,00 €</td>
+<td class="px-lg py-4 text-right">
+<button class="text-primary hover:underline text-[14px] font-semibold flex items-center gap-2 justify-end ml-auto" onclick="openModal('Global Tech SA', '4 890,00 €', 'Second rappel : Facture impayée')">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                                    Prévisualiser l'email
+                                </button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-[#eff6ff] transition-colors group">
+<td class="px-lg py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-error/10 flex items-center justify-center text-error font-bold text-[12px]">AD</div>
+<span class="font-semibold text-on-surface">Artisan Design</span>
+</div>
+</td>
+<td class="px-lg py-4 text-[14px] text-on-surface-variant font-mono">#FAC-2023-0612</td>
+<td class="px-lg py-4 text-[14px] text-on-surface font-medium">42 jours</td>
+<td class="px-lg py-4">
+<span class="px-3 py-1 rounded-full text-[12px] font-bold bg-error-container text-on-error-container border border-error/20">Relance 3</span>
+</td>
+<td class="px-lg py-4 text-[14px] text-on-surface font-bold text-right">980,20 €</td>
+<td class="px-lg py-4 text-right">
+<button class="text-primary hover:underline text-[14px] font-semibold flex items-center gap-2 justify-end ml-auto" onclick="openModal('Artisan Design', '980,20 €', 'MISE EN DEMEURE : Facture #FAC-2023-0612')">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                                    Prévisualiser l'email
+                                </button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-[#eff6ff] transition-colors group">
+<td class="px-lg py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-[12px]">HL</div>
+<span class="font-semibold text-on-surface">Horizon Logistics</span>
+</div>
+</td>
+<td class="px-lg py-4 text-[14px] text-on-surface-variant font-mono">#FAC-2023-0905</td>
+<td class="px-lg py-4 text-[14px] text-on-surface font-medium">6 jours</td>
+<td class="px-lg py-4">
+<span class="px-3 py-1 rounded-full text-[12px] font-bold bg-yellow-100 text-yellow-800 border border-yellow-200">Relance 1</span>
+</td>
+<td class="px-lg py-4 text-[14px] text-on-surface font-bold text-right">12 400,00 €</td>
+<td class="px-lg py-4 text-right">
+<button class="text-primary hover:underline text-[14px] font-semibold flex items-center gap-2 justify-end ml-auto" onclick="openModal('Horizon Logistics', '12 400,00 €', 'Rappel amical de paiement')">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                                    Prévisualiser l'email
+                                </button>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="px-lg py-4 bg-surface-container-low flex justify-between items-center border-t border-outline-variant">
+<span class="text-[14px] text-on-surface-variant">Affichage de 4 sur 42 factures</span>
+<div class="flex gap-2">
+<button class="px-3 py-1 border border-outline-variant rounded bg-white text-[14px] disabled:opacity-50">Précédent</button>
+<button class="px-3 py-1 border border-outline-variant rounded bg-primary text-white text-[14px]">1</button>
+<button class="px-3 py-1 border border-outline-variant rounded bg-white text-[14px]">2</button>
+<button class="px-3 py-1 border border-outline-variant rounded bg-white text-[14px]">Suivant</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Email Preview Modal -->
+<div class="hidden fixed inset-0 z-[100] flex items-center justify-center p-lg" id="email-modal">
+<div class="modal-backdrop absolute inset-0" onclick="closeModal()"></div>
+<div class="bg-white rounded-2xl shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),_0px_4px_6px_-2px_rgba(0,0,0,0.05)] w-full max-w-[600px] relative z-10 overflow-hidden flex flex-col max-h-[90vh]">
+<!-- Header -->
+<div class="px-lg py-md border-b border-outline-variant flex justify-between items-center bg-surface">
+<h3 class="text-[18px] font-bold text-on-surface">Aperçu de la relance</h3>
+<button class="text-outline hover:text-on-surface transition-colors" onclick="closeModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Email Metadata -->
+<div class="p-lg bg-surface-container-lowest border-b border-outline-variant space-y-3">
+<div class="flex items-center text-[14px]">
+<span class="w-20 text-outline font-medium">À :</span>
+<span class="text-on-surface font-semibold" id="modal-recipient">contact@client.com</span>
+</div>
+<div class="flex items-center text-[14px]">
+<span class="w-20 text-outline font-medium">Sujet :</span>
+<span class="text-on-surface font-semibold" id="modal-subject">Rappel de paiement</span>
+</div>
+</div>
+<!-- Email Body -->
+<div class="p-lg flex-1 overflow-y-auto bg-white text-[15px] leading-relaxed text-on-surface-variant">
+<p>Bonjour <span class="font-bold text-on-surface" id="modal-client-name">Client</span>,</p>
+<br/>
+<p>Sauf erreur ou omission de notre part, nous n'avons pas encore reçu le règlement de votre facture d'un montant de <span class="font-bold text-on-surface" id="modal-amount">0,00 €</span>.</p>
+<br/>
+<p>Nous vous remercions de bien vouloir procéder à son paiement dans les plus brefs délais par virement bancaire. Si toutefois votre règlement nous a déjà été adressé, nous vous prions de ne pas tenir compte de ce message.</p>
+<br/>
+<p>Nous restons à votre disposition pour tout complément d'information.</p>
+<br/>
+<p>Cordialement,</p>
+<div class="mt-4 border-l-2 border-primary pl-4 py-1">
+<p class="font-bold text-on-surface">Service Comptabilité</p>
+<p class="text-[13px]">Fournitex ADV</p>
+</div>
+</div>
+<!-- Footer -->
+<div class="p-lg border-t border-outline-variant bg-surface flex justify-end gap-sm">
+<button class="px-6 py-2 border border-outline-variant rounded-lg text-on-surface font-semibold text-[14px] hover:bg-surface-container-low transition-all" onclick="closeModal()">
+                    Modifier
+                </button>
+<button class="px-6 py-2 bg-primary text-white rounded-lg font-semibold text-[14px] shadow-sm hover:brightness-110 transition-all flex items-center gap-2" onclick="alert('Email envoyé avec succès')">
+<span class="material-symbols-outlined text-[18px]">send</span>
+                    Envoyer maintenant
+                </button>
+</div>
+</div>
+</div>
+<script>
+        function openModal(client, amount, subject) {
+            document.getElementById('modal-client-name').innerText = client;
+            document.getElementById('modal-amount').innerText = amount;
+            document.getElementById('modal-subject').innerText = subject;
+            document.getElementById('modal-recipient').innerText = `compta@${client.toLowerCase().replace(/\s/g, '')}.fr`;
+            
+            const modal = document.getElementById('email-modal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('email-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close on Escape
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
+</body></html>
