@@ -120,6 +120,12 @@ def get_outbox():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+
+@app.route("/")
+def hello_world():
+    return "<p>Fournitex Backend !</p>"
+
+
 if __name__ == '__main__':
     # Ensure output directory exists
     os.makedirs(OUTPUT_DIR, exist_ok=True)
