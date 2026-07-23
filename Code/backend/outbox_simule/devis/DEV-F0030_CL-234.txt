@@ -1,0 +1,17 @@
+DESTINATAIRE : compta@informatique.proserv.fr
+OBJET : Votre devis n° DEV-F0030 — Fournitex
+============================================================
+
+Bonjour Julie Moreau,
+Veuillez trouver notre devis n° DEV-F0030 d'un montant de 324.28 € HT (389.13 € TTC), valable 30 jours. Détail des lignes et remises appliquées ci-joint.
+Cordialement,
+Service commercial Fournitex
+
+Réf.          | Désignation                         |  Qté | PU HT €  | Rem%  | Total HT € | TVA%  | Total TTC€
+---------------------------------------------------------------------------------------------------------------
+PAP-A4-500    | Ramette papier A4 80g (500 feuilles) |   55 |     4.90 |  12.0 |     237.16 |    20 |     284.59
+PAP-CAH-96    | Cahier 96 pages grands carreaux     |   55 |     1.80 |  12.0 |      87.12 |    20 |     104.54
+---------------------------------------------------------------------------------------------------------------
+TOTAL                                                        |     324.28 |       |     389.13
+
+Validité : jusqu'au 26/08/2026

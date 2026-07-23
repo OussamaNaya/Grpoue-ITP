@@ -1,0 +1,18 @@
+DESTINATAIRE : compta@cabinet.dentaire.molaire.fr
+OBJET : Votre devis n° DEV-F0021 — Fournitex
+============================================================
+
+Bonjour Nicolas Benali,
+Veuillez trouver notre devis n° DEV-F0021 d'un montant de 132.48 € HT (158.98 € TTC), valable 30 jours. Détail des lignes et remises appliquées ci-joint.
+Cordialement,
+Service commercial Fournitex
+
+Réf.          | Désignation                         |  Qté | PU HT €  | Rem%  | Total HT € | TVA%  | Total TTC€
+---------------------------------------------------------------------------------------------------------------
+HYG-GEL-5L    | Gel hydroalcoolique bidon 5 L       |    2 |    22.00 |   8.0 |      40.48 |    20 |      48.58
+HYG-ESS-6     | Essuie-mains (colis 6 bobines)      |    4 |    14.50 |   8.0 |      53.36 |    20 |      64.03
+HYG-SAV-CR    | Savon crème recharge 1 L            |   10 |     4.20 |   8.0 |      38.64 |    20 |      46.37
+---------------------------------------------------------------------------------------------------------------
+TOTAL                                                        |     132.48 |       |     158.98
+
+Validité : jusqu'au 26/08/2026

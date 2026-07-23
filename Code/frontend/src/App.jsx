@@ -4,6 +4,7 @@ import Layout from './components/Layout'
 import Dashboard from './pages/Dashboard'
 import Outbox from './pages/Outbox'
 import Anomalies from './pages/Anomalies'
+import Devis from './pages/Devis'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/outbox" element={<Outbox />} />
           <Route path="/anomalies" element={<Anomalies />} />
+          <Route path="/devis" element={<Devis />} />
         </Routes>
       </Layout>
     </Router>

@@ -1,0 +1,20 @@
+DESTINATAIRE : compta@paysagiste.vertparc.fr
+OBJET : Votre devis n° DEV-F0016 — Fournitex
+============================================================
+
+Bonjour Nadia Roche,
+Veuillez trouver notre devis n° DEV-F0016 d'un montant de 19516.00 € HT (23419.20 € TTC), valable 30 jours. Détail des lignes et remises appliquées ci-joint.
+Cordialement,
+Service commercial Fournitex
+
+Réf.          | Désignation                         |  Qté | PU HT €  | Rem%  | Total HT € | TVA%  | Total TTC€
+---------------------------------------------------------------------------------------------------------------
+INF-ECR-24    | Écran 24 pouces Full HD             |  200 |   119.00 |  18.0 |   19516.00 |    20 |   23419.20
+---------------------------------------------------------------------------------------------------------------
+TOTAL                                                        |   19516.00 |       |   23419.20
+
+Validité : jusqu'au 26/08/2026
+
+
+--- LIGNES À CLARIFIER ---
+  • KLX-200 (qté: 200.0) — référence introuvable ou ambiguë

@@ -1,0 +1,21 @@
+DESTINATAIRE : compta@cabinet.avocats.lex.et.partners.fr
+OBJET : Votre devis n° DEV-F0004 — Fournitex
+============================================================
+
+Bonjour Thomas Fabre,
+Veuillez trouver notre devis n° DEV-F0004 d'un montant de 401.38 € HT (481.66 € TTC), valable 30 jours. Détail des lignes et remises appliquées ci-joint.
+Cordialement,
+Service commercial Fournitex
+
+Réf.          | Désignation                         |  Qté | PU HT €  | Rem%  | Total HT € | TVA%  | Total TTC€
+---------------------------------------------------------------------------------------------------------------
+SEC-GIL-JN    | Gilets haute visibilité (lot de 10) |   20 |    19.90 |   5.0 |     378.10 |    20 |     453.72
+SEC-TRO-PH    | Trousse premiers secours            |    1 |    24.00 |   3.0 |      23.28 |    20 |      27.94
+---------------------------------------------------------------------------------------------------------------
+TOTAL                                                        |     401.38 |       |     481.66
+
+Validité : jusqu'au 26/08/2026
+
+
+--- LIGNES À CLARIFIER ---
+  • 6 kg (qté: 2.0) — référence introuvable ou ambiguë

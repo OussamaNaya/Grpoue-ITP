@@ -1,0 +1,16 @@
+DESTINATAIRE : contact@prospect-inconnu.fr
+OBJET : Votre devis n° DEV-F0027 — Fournitex
+============================================================
+
+Bonjour Client,
+Veuillez trouver notre devis n° DEV-F0027 d'un montant de 2831.00 € HT (3397.20 € TTC), valable 30 jours. Détail des lignes et remises appliquées ci-joint.
+Cordialement,
+Service commercial Fournitex
+
+Réf.          | Désignation                         |  Qté | PU HT €  | Rem%  | Total HT € | TVA%  | Total TTC€
+---------------------------------------------------------------------------------------------------------------
+MOB-CHA-ERG   | Chaise de bureau ergonomique        |   20 |   149.00 |   5.0 |    2831.00 |    20 |    3397.20
+---------------------------------------------------------------------------------------------------------------
+TOTAL                                                        |    2831.00 |       |    3397.20
+
+Validité : jusqu'au 26/08/2026

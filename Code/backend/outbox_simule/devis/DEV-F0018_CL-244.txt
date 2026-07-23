@@ -1,0 +1,18 @@
+DESTINATAIRE : contact@prospect-inconnu.fr
+OBJET : Your quote #DEV-F0018 — Fournitex
+============================================================
+
+Hello Client,
+Please find our quote #DEV-F0018 for 2156.50 € excl. VAT (2587.80 € incl.), valid 30 days. Line details and applied discounts attached.
+Best regards,
+Fournitex Sales Team
+
+Ref.          | Description                         |  Qty | Unit HT€ | Disc% | Total HT€  | VAT%  | Total TTC€
+---------------------------------------------------------------------------------------------------------------
+INF-ECR-24    | Écran 24 pouces Full HD             |   10 |   119.00 |   5.0 |    1130.50 |    20 |    1356.60
+INF-CAS-BT    | Casque audio Bluetooth avec micro   |   10 |    59.00 |   5.0 |     560.50 |    20 |     672.60
+INF-WEB-HD    | Webcam Full HD                      |   10 |    49.00 |   5.0 |     465.50 |    20 |     558.60
+---------------------------------------------------------------------------------------------------------------
+TOTAL                                                        |    2156.50 |       |    2587.80
+
+Valid until: 26/08/2026

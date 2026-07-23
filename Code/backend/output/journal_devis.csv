@@ -1,0 +1,31 @@
+﻿horodatage;demande_id;client_id;action;detail
+2026-07-23 14:45:35;DEV-0001;CL-203;DEVIS_GENERE;DEV-F0010 — 2 lignes chiffrées, 0 à clarifier — TTC: 5171.04€
+2026-07-23 14:45:35;DEV-0002;CL-207;DEVIS_GENERE;DEV-F0011 — 2 lignes chiffrées, 0 à clarifier — TTC: 81.01€
+2026-07-23 14:45:35;DEV-0003;CL-241;DEVIS_GENERE;DEV-F0012 — 5 lignes chiffrées, 0 à clarifier — TTC: 6122.06€
+2026-07-23 14:45:35;DEV-0004;CL-226;DEVIS_GENERE;DEV-F0013 — 2 lignes chiffrées, 0 à clarifier — TTC: 3153.19€
+2026-07-23 14:45:35;DEV-0005;CL-238;DEVIS_GENERE;DEV-F0014 — 3 lignes chiffrées, 0 à clarifier — TTC: 607.37€
+2026-07-23 14:45:35;DEV-0006;CL-214;DEVIS_GENERE;DEV-F0015 — 2 lignes chiffrées, 0 à clarifier — TTC: 2118.68€
+2026-07-23 14:45:35;DEV-0007;CL-233;DEVIS_GENERE;DEV-F0016 — 1 lignes chiffrées, 1 à clarifier — TTC: 23419.20€
+2026-07-23 14:45:35;DEV-0008;CL-221;DEVIS_GENERE;DEV-F0017 — 2 lignes chiffrées, 0 à clarifier — TTC: 9046.08€
+2026-07-23 14:45:35;DEV-0009;CL-244;CLIENT_INCONNU;Prospect non référencé — traitement sans remise contractuelle
+2026-07-23 14:45:35;DEV-0009;CL-244;DEVIS_GENERE;DEV-F0018 — 3 lignes chiffrées, 0 à clarifier — TTC: 2587.80€
+2026-07-23 14:45:35;DEV-0010;CL-209;DEVIS_GENERE;DEV-F0019 — 2 lignes chiffrées, 0 à clarifier — TTC: 3189.36€
+2026-07-23 14:45:35;DEV-0011;CL-217;ALERTE_REMISE_HORS_GRILLE;Remise demandée 25.0% plafonnée à 18.0% (R10)
+2026-07-23 14:45:35;DEV-0011;CL-217;DEVIS_GENERE;DEV-F0020 — 1 lignes chiffrées, 0 à clarifier — TTC: 1446.48€
+2026-07-23 14:45:35;DEV-0012;CL-229;DEVIS_GENERE;DEV-F0021 — 3 lignes chiffrées, 0 à clarifier — TTC: 158.98€
+2026-07-23 14:45:35;DEV-0013;CL-236;RECLAMATION_ROUTEE_HUMAIN;Partie réclamation routée à l'humain (R12), partie devis traitée
+2026-07-23 14:45:35;DEV-0013;CL-236;DEVIS_GENERE;DEV-F0022 — 1 lignes chiffrées, 0 à clarifier — TTC: 424.80€
+2026-07-23 14:45:35;DEV-0014;CL-225;RECLAMATION_ROUTEE_HUMAIN;Partie réclamation routée à l'humain (R12), partie devis traitée
+2026-07-23 14:45:35;DEV-0014;CL-225;DEVIS_GENERE;DEV-F0023 — 2 lignes chiffrées, 0 à clarifier — TTC: 1292.76€
+2026-07-23 14:45:35;DEV-0015;CL-248;CLIENT_INCONNU;Prospect non référencé — traitement sans remise contractuelle
+2026-07-23 14:45:35;DEV-0015;CL-248;DEVIS_GENERE;DEV-F0024 — 3 lignes chiffrées, 0 à clarifier — TTC: 3938.40€
+2026-07-23 14:45:35;DEV-0016;CL-211;ALERTE_SECURITE;IBAN détecté et masqué (R12)
+2026-07-23 14:45:35;DEV-0016;CL-211;DEVIS_GENERE;DEV-F0025 — 1 lignes chiffrées, 0 à clarifier — TTC: 820.80€
+2026-07-23 14:45:35;DEV-0017;CL-230;DEVIS_GENERE;DEV-F0026 — 2 lignes chiffrées, 0 à clarifier — TTC: 489.22€
+2026-07-23 14:45:35;DEV-0018;CL-999;CLIENT_INCONNU;Prospect non référencé — traitement sans remise contractuelle
+2026-07-23 14:45:35;DEV-0018;CL-999;DEVIS_GENERE;DEV-F0027 — 1 lignes chiffrées, 0 à clarifier — TTC: 3397.20€
+2026-07-23 14:45:35;DEV-0019;CL-240;MANIPULATION_IGNOREE;Tentative de manipulation tarifaire détectée et ignorée (R12)
+2026-07-23 14:45:35;DEV-0019;CL-240;DEVIS_GENERE;DEV-F0028 — 1 lignes chiffrées, 0 à clarifier — TTC: 3255.84€
+2026-07-23 14:45:35;DEV-0020;CL-202;DEVIS_GENERE;DEV-F0029 — 3 lignes chiffrées, 0 à clarifier — TTC: 9825.00€
+2026-07-23 14:45:35;DEV-0021;CL-223;MESSAGE_VIDE;Message vide — demande de précisions envoyée
+2026-07-23 14:45:35;DEV-0022;CL-234;DEVIS_GENERE;DEV-F0030 — 2 lignes chiffrées, 0 à clarifier — TTC: 389.13€

@@ -1,0 +1,18 @@
+DESTINATAIRE : contact@prospect-inconnu.fr
+OBJET : Your quote #DEV-F0024 — Fournitex
+============================================================
+
+Hello Client,
+Please find our quote #DEV-F0024 for 3282.00 € excl. VAT (3938.40 € incl.), valid 30 days. Line details and applied discounts attached.
+Best regards,
+Fournitex Sales Team
+
+Ref.          | Description                         |  Qty | Unit HT€ | Disc% | Total HT€  | VAT%  | Total TTC€
+---------------------------------------------------------------------------------------------------------------
+MOB-CHA-ERG   | Chaise de bureau ergonomique        |   12 |   149.00 |   5.0 |    1698.60 |    20 |    2038.32
+MOB-BUR-140   | Bureau plateau 140x70               |    6 |   229.00 |   0.0 |    1374.00 |    20 |    1648.80
+MOB-LAMP-LED  | Lampe de bureau LED                 |    6 |    34.90 |   0.0 |     209.40 |    20 |     251.28
+---------------------------------------------------------------------------------------------------------------
+TOTAL                                                        |    3282.00 |       |    3938.40
+
+Valid until: 26/08/2026

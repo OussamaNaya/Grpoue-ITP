@@ -1,0 +1,16 @@
+DESTINATAIRE : compta@autoecole.conduite.plus.fr
+OBJET : Votre devis n° DEV-F0020 — Fournitex
+============================================================
+
+Bonjour Amel Lopez,
+Veuillez trouver notre devis n° DEV-F0020 d'un montant de 1205.40 € HT (1446.48 € TTC), valable 30 jours. Détail des lignes et remises appliquées ci-joint.
+Cordialement,
+Service commercial Fournitex
+
+Réf.          | Désignation                         |  Qté | PU HT €  | Rem%  | Total HT € | TVA%  | Total TTC€
+---------------------------------------------------------------------------------------------------------------
+PAP-A4-500    | Ramette papier A4 80g (500 feuilles) |  300 |     4.90 |  18.0 |    1205.40 |    20 |    1446.48
+---------------------------------------------------------------------------------------------------------------
+TOTAL                                                        |    1205.40 |       |    1446.48
+
+Validité : jusqu'au 26/08/2026

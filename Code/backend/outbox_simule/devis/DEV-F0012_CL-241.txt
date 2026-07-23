@@ -1,0 +1,20 @@
+DESTINATAIRE : compta@mairie.de.valbonnesurcere.fr
+OBJET : Votre devis n° DEV-F0012 — Fournitex
+============================================================
+
+Bonjour Olivier Roche,
+Veuillez trouver notre devis n° DEV-F0012 d'un montant de 5101.72 € HT (6122.06 € TTC), valable 30 jours. Détail des lignes et remises appliquées ci-joint.
+Cordialement,
+Service commercial Fournitex
+
+Réf.          | Désignation                         |  Qté | PU HT €  | Rem%  | Total HT € | TVA%  | Total TTC€
+---------------------------------------------------------------------------------------------------------------
+MOB-CHA-ERG   | Chaise de bureau ergonomique        |    8 |   149.00 |   3.0 |    1156.24 |    20 |    1387.49
+INF-ECR-24    | Écran 24 pouces Full HD             |   24 |   119.00 |   5.0 |    2713.20 |    20 |    3255.84
+INF-CLA-SF    | Clavier sans fil AZERTY             |    8 |    29.90 |   3.0 |     232.02 |    20 |     278.42
+INF-SOU-ERG   | Souris ergonomique verticale        |    8 |    39.90 |   3.0 |     309.62 |    20 |     371.54
+INF-DOCK-USB  | Station d'accueil USB-C             |    8 |    89.00 |   3.0 |     690.64 |    20 |     828.77
+---------------------------------------------------------------------------------------------------------------
+TOTAL                                                        |    5101.72 |       |    6122.06
+
+Validité : jusqu'au 26/08/2026

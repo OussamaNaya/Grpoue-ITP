@@ -1,0 +1,17 @@
+DESTINATAIRE : compta@transports.rivoli.fr
+OBJET : Votre devis n° DEV-F0011 — Fournitex
+============================================================
+
+Bonjour Paul Garcia,
+Veuillez trouver notre devis n° DEV-F0011 d'un montant de 67.51 € HT (81.01 € TTC), valable 30 jours. Détail des lignes et remises appliquées ci-joint.
+Cordialement,
+Service commercial Fournitex
+
+Réf.          | Désignation                         |  Qté | PU HT €  | Rem%  | Total HT € | TVA%  | Total TTC€
+---------------------------------------------------------------------------------------------------------------
+PAP-A4-500    | Ramette papier A4 80g (500 feuilles) |    4 |     4.90 |   3.0 |      19.01 |    20 |      22.81
+PAP-STY-BL    | Stylo bille bleu (boîte de 50)      |    4 |    12.50 |   3.0 |      48.50 |    20 |      58.20
+---------------------------------------------------------------------------------------------------------------
+TOTAL                                                        |      67.51 |       |      81.01
+
+Validité : jusqu'au 26/08/2026

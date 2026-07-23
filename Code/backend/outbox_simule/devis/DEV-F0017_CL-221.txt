@@ -1,0 +1,17 @@
+DESTINATAIRE : compta@coiffure.tendance.fr
+OBJET : Votre devis n° DEV-F0017 — Fournitex
+============================================================
+
+Bonjour Marc Weber,
+Veuillez trouver notre devis n° DEV-F0017 d'un montant de 7538.40 € HT (9046.08 € TTC), valable 30 jours. Détail des lignes et remises appliquées ci-joint.
+Cordialement,
+Service commercial Fournitex
+
+Réf.          | Désignation                         |  Qté | PU HT €  | Rem%  | Total HT € | TVA%  | Total TTC€
+---------------------------------------------------------------------------------------------------------------
+PAP-CAH-96    | Cahier 96 pages grands carreaux     |  100 |     1.80 |  12.0 |     158.40 |    20 |     190.08
+PAP-ENV-DL    | Enveloppes DL autocollantes (boîte 500) |  500 |    18.00 |  18.0 |    7380.00 |    20 |    8856.00
+---------------------------------------------------------------------------------------------------------------
+TOTAL                                                        |    7538.40 |       |    9046.08
+
+Validité : jusqu'au 26/08/2026

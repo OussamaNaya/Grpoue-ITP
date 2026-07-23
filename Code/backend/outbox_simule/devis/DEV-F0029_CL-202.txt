@@ -1,0 +1,18 @@
+DESTINATAIRE : compta@menuiserie.lacan.et.fils.fr
+OBJET : Votre devis n° DEV-F0029 — Fournitex
+============================================================
+
+Bonjour David Lefèvre,
+Veuillez trouver notre devis n° DEV-F0029 d'un montant de 8187.50 € HT (9825.00 € TTC), valable 30 jours. Détail des lignes et remises appliquées ci-joint.
+Cordialement,
+Service commercial Fournitex
+
+Réf.          | Désignation                         |  Qté | PU HT €  | Rem%  | Total HT € | TVA%  | Total TTC€
+---------------------------------------------------------------------------------------------------------------
+CAF-CAP-100   | Capsules café (boîte 100)           |    2 |    29.00 |   0.0 |      58.00 |    20 |      69.60
+CAF-THE-100   | Thé assortiment (100 sachets)       |    1 |    11.50 |   0.0 |      11.50 |    20 |      13.80
+CAF-SUC-1000  | Bûchettes de sucre (x1000)          | 1000 |     9.90 |  18.0 |    8118.00 |    20 |    9741.60
+---------------------------------------------------------------------------------------------------------------
+TOTAL                                                        |    8187.50 |       |    9825.00
+
+Validité : jusqu'au 26/08/2026

@@ -1,0 +1,16 @@
+DESTINATAIRE : compta@nettoyage.cleanpro.fr
+OBJET : Votre devis n° DEV-F0022 — Fournitex
+============================================================
+
+Bonjour Lucas Lopez,
+Veuillez trouver notre devis n° DEV-F0022 d'un montant de 354.00 € HT (424.80 € TTC), valable 30 jours. Détail des lignes et remises appliquées ci-joint.
+Cordialement,
+Service commercial Fournitex
+
+Réf.          | Désignation                         |  Qté | PU HT €  | Rem%  | Total HT € | TVA%  | Total TTC€
+---------------------------------------------------------------------------------------------------------------
+INF-CAS-BT    | Casque audio Bluetooth avec micro   |    6 |    59.00 |   0.0 |     354.00 |    20 |     424.80
+---------------------------------------------------------------------------------------------------------------
+TOTAL                                                        |     354.00 |       |     424.80
+
+Validité : jusqu'au 26/08/2026

@@ -1,0 +1,11 @@
+DESTINATAIRE : compta@fleuriste.rose.et.lys.fr
+OBJET : Précision nécessaire — votre demande DEV-0021
+---
+
+Bonjour,
+
+Nous avons bien reçu votre demande mais le message est vide ou illisible.
+Pourriez-vous nous préciser les produits et quantités souhaités ?
+
+Cordialement,
+Service commercial Fournitex

@@ -1,0 +1,17 @@
+DESTINATAIRE : compta@garage.central.auto.fr
+OBJET : Votre devis n° DEV-F0010 — Fournitex
+============================================================
+
+Bonjour Léa Benali,
+Veuillez trouver notre devis n° DEV-F0010 d'un montant de 4309.20 € HT (5171.04 € TTC), valable 30 jours. Détail des lignes et remises appliquées ci-joint.
+Cordialement,
+Service commercial Fournitex
+
+Réf.          | Désignation                         |  Qté | PU HT €  | Rem%  | Total HT € | TVA%  | Total TTC€
+---------------------------------------------------------------------------------------------------------------
+MOB-CHA-ERG   | Chaise de bureau ergonomique        |   12 |   149.00 |   5.0 |    1698.60 |    20 |    2038.32
+MOB-BUR-140   | Bureau plateau 140x70               |   12 |   229.00 |   5.0 |    2610.60 |    20 |    3132.72
+---------------------------------------------------------------------------------------------------------------
+TOTAL                                                        |    4309.20 |       |    5171.04
+
+Validité : jusqu'au 26/08/2026

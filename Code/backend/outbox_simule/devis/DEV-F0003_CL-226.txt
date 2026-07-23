@@ -1,0 +1,21 @@
+DESTINATAIRE : compta@traiteur.saveurs.et.co.fr
+OBJET : Votre devis n° DEV-F0003 — Fournitex
+============================================================
+
+Bonjour Olivier Marchal,
+Veuillez trouver notre devis n° DEV-F0003 d'un montant de 160.05 € HT (192.06 € TTC), valable 30 jours. Détail des lignes et remises appliquées ci-joint.
+Cordialement,
+Service commercial Fournitex
+
+Réf.          | Désignation                         |  Qté | PU HT €  | Rem%  | Total HT € | TVA%  | Total TTC€
+---------------------------------------------------------------------------------------------------------------
+CAF-GOB-1000  | Gobelets carton 20 cl (x1000)       |    2 |    39.00 |   3.0 |      75.66 |    20 |      90.79
+CAF-CAP-100   | Capsules café (boîte 100)           |    3 |    29.00 |   3.0 |      84.39 |    20 |     101.27
+---------------------------------------------------------------------------------------------------------------
+TOTAL                                                        |     160.05 |       |     192.06
+
+Validité : jusqu'au 26/08/2026
+
+
+--- LIGNES À CLARIFIER ---
+  • devis pour ... non pardon (qté: 250.0) — référence introuvable ou ambiguë

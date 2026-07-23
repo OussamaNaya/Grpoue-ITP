@@ -1,0 +1,16 @@
+DESTINATAIRE : compta@plomberie.aquanet.fr
+OBJET : Votre devis n° DEV-F0008 — Fournitex
+============================================================
+
+Bonjour Inès Meyer,
+Veuillez trouver notre devis n° DEV-F0008 d'un montant de 684.00 € HT (820.80 € TTC), valable 30 jours. Détail des lignes et remises appliquées ci-joint.
+Cordialement,
+Service commercial Fournitex
+
+Réf.          | Désignation                         |  Qté | PU HT €  | Rem%  | Total HT € | TVA%  | Total TTC€
+---------------------------------------------------------------------------------------------------------------
+SEC-TRO-PH    | Trousse premiers secours            |   30 |    24.00 |   5.0 |     684.00 |    20 |     820.80
+---------------------------------------------------------------------------------------------------------------
+TOTAL                                                        |     684.00 |       |     820.80
+
+Validité : jusqu'au 26/08/2026

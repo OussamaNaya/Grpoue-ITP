@@ -1,0 +1,18 @@
+DESTINATAIRE : compta@cabinet.avocats.lex.et.partners.fr
+OBJET : Votre devis n° DEV-F0014 — Fournitex
+============================================================
+
+Bonjour Thomas Fabre,
+Veuillez trouver notre devis n° DEV-F0014 d'un montant de 506.14 € HT (607.37 € TTC), valable 30 jours. Détail des lignes et remises appliquées ci-joint.
+Cordialement,
+Service commercial Fournitex
+
+Réf.          | Désignation                         |  Qté | PU HT €  | Rem%  | Total HT € | TVA%  | Total TTC€
+---------------------------------------------------------------------------------------------------------------
+SEC-EXT-6KG   | Extincteur poudre 6 kg              |    2 |    54.00 |   3.0 |     104.76 |    20 |     125.71
+SEC-TRO-PH    | Trousse premiers secours            |    1 |    24.00 |   3.0 |      23.28 |    20 |      27.94
+SEC-GIL-JN    | Gilets haute visibilité (lot de 10) |   20 |    19.90 |   5.0 |     378.10 |    20 |     453.72
+---------------------------------------------------------------------------------------------------------------
+TOTAL                                                        |     506.14 |       |     607.37
+
+Validité : jusqu'au 26/08/2026

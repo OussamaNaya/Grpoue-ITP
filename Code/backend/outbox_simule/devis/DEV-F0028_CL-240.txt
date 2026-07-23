@@ -1,0 +1,16 @@
+DESTINATAIRE : compta@association.sport.pour.tous.fr
+OBJET : Votre devis n° DEV-F0028 — Fournitex
+============================================================
+
+Bonjour Julie Zidane,
+Veuillez trouver notre devis n° DEV-F0028 d'un montant de 2713.20 € HT (3255.84 € TTC), valable 30 jours. Détail des lignes et remises appliquées ci-joint.
+Cordialement,
+Service commercial Fournitex
+
+Réf.          | Désignation                         |  Qté | PU HT €  | Rem%  | Total HT € | TVA%  | Total TTC€
+---------------------------------------------------------------------------------------------------------------
+INF-ECR-24    | Écran 24 pouces Full HD             |   24 |   119.00 |   5.0 |    2713.20 |    20 |    3255.84
+---------------------------------------------------------------------------------------------------------------
+TOTAL                                                        |    2713.20 |       |    3255.84
+
+Validité : jusqu'au 26/08/2026

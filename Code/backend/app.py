@@ -39,12 +39,24 @@ def get_stats():
         if not factures_df.empty and 'solde' in factures_df.columns:
             total_recouvrer = factures_df['solde'].sum()
 
+        # Flux B stats
+        devis_path       = os.path.join(OUTPUT_DIR, 'devis_generes.csv')
+        clarif_path      = os.path.join(OUTPUT_DIR, 'lignes_a_clarifier.csv')
+        alertes_dv_path  = os.path.join(OUTPUT_DIR, 'alertes_validation.csv')
+        devis_df         = pd.read_csv(devis_path,      sep=';') if os.path.exists(devis_path)      else pd.DataFrame()
+        clarif_df        = pd.read_csv(clarif_path,     sep=';') if os.path.exists(clarif_path)     else pd.DataFrame()
+        alertes_dv_df    = pd.read_csv(alertes_dv_path, sep=';') if os.path.exists(alertes_dv_path) else pd.DataFrame()
+
         stats = {
             'factures_en_retard':   len(relances_df),
             'montant_a_recouvrer':  f"{total_recouvrer:,.2f} \u20ac".replace(',', ' '),
             'anomalies_bloquees':   len(anomalies_df),
             'relances_a_envoyer':   len(relances_df),
-            'repartition': {}
+            'repartition': {},
+            'devis_generes':        len(devis_df),
+            'devis_clarifier':      len(clarif_df),
+            'devis_alertes':        len(alertes_dv_df),
+            'devis_total_ttc':      f"{devis_df['grand_total_ttc'].sum():,.2f} \u20ac".replace(',', ' ') if not devis_df.empty and 'grand_total_ttc' in devis_df.columns else '0,00 \u20ac',
         }
 
         if not relances_df.empty and 'code_modele' in relances_df.columns:
@@ -136,6 +148,119 @@ def get_outbox():
         return jsonify({'error': str(e), 'trace': traceback.format_exc()}), 500
 
 
+# ─── Flux B Routes ───────────────────────────────────────────────────────────
+
+@app.route('/api/devis', methods=['GET'])
+def get_devis():
+    try:
+        path = os.path.join(OUTPUT_DIR, 'devis_generes.csv')
+        if not os.path.exists(path):
+            return jsonify([])
+        df = pd.read_csv(path, sep=';')
+        result = []
+        for _, row in df.iterrows():
+            result.append({
+                'devis_id'          : clean_nan(row.get('devis_id')),
+                'demande_id'        : clean_nan(row.get('demande_id')),
+                'client_id'         : clean_nan(row.get('client_id')),
+                'raison_sociale'    : clean_nan(row.get('raison_sociale')),
+                'langue'            : clean_nan(row.get('langue')),
+                'date_devis'        : clean_nan(row.get('date_devis')),
+                'date_validite'     : clean_nan(row.get('date_validite')),
+                'nb_lignes_chiffrees': clean_nan(row.get('nb_lignes_chiffrees')),
+                'nb_lignes_clarifier': clean_nan(row.get('nb_lignes_clarifier')),
+                'grand_total_ht'    : clean_nan(row.get('grand_total_ht')),
+                'grand_total_tva'   : clean_nan(row.get('grand_total_tva')),
+                'grand_total_ttc'   : clean_nan(row.get('grand_total_ttc')),
+                'fichier_outbox'    : clean_nan(row.get('fichier_outbox')),
+            })
+        return jsonify(result)
+    except Exception as e:
+        import traceback
+        return jsonify({'error': str(e), 'trace': traceback.format_exc()}), 500
+
+
+@app.route('/api/devis/alertes', methods=['GET'])
+def get_devis_alertes():
+    try:
+        path = os.path.join(OUTPUT_DIR, 'alertes_validation.csv')
+        if not os.path.exists(path):
+            return jsonify([])
+        df = pd.read_csv(path, sep=';')
+
+        def get_alerte_style(type_al):
+            if 'REMISE' in str(type_al):     return {'color': 'bg-orange-50 border-orange-500 text-orange-700', 'icon': 'percent'}
+            if 'IBAN' in str(type_al):        return {'color': 'bg-red-50 border-red-500 text-red-700',    'icon': 'security'}
+            if 'MANIPULATION' in str(type_al):return {'color': 'bg-red-50 border-red-500 text-red-700',    'icon': 'gpp_bad'}
+            if 'MIXTE' in str(type_al):       return {'color': 'bg-blue-50 border-blue-500 text-blue-700', 'icon': 'call_split'}
+            if 'INCONNU' in str(type_al):     return {'color': 'bg-yellow-50 border-yellow-500 text-yellow-700', 'icon': 'person_add'}
+            return {'color': 'bg-gray-50 border-gray-400 text-gray-700', 'icon': 'info'}
+
+        result = []
+        for _, row in df.iterrows():
+            style = get_alerte_style(row.get('type_alerte', ''))
+            result.append({
+                'demande_id' : clean_nan(row.get('demande_id')),
+                'client_id'  : clean_nan(row.get('client_id')),
+                'type_alerte': clean_nan(row.get('type_alerte')),
+                'detail'     : clean_nan(row.get('detail')),
+                'horodatage' : clean_nan(row.get('horodatage')),
+                'color'      : style['color'],
+                'icon'       : style['icon'],
+            })
+        return jsonify(result)
+    except Exception as e:
+        import traceback
+        return jsonify({'error': str(e), 'trace': traceback.format_exc()}), 500
+
+
+@app.route('/api/devis/clarifications', methods=['GET'])
+def get_devis_clarifications():
+    try:
+        path = os.path.join(OUTPUT_DIR, 'lignes_a_clarifier.csv')
+        if not os.path.exists(path):
+            return jsonify([])
+        df = pd.read_csv(path, sep=';')
+        result = []
+        for _, row in df.iterrows():
+            result.append({
+                'demande_id'     : clean_nan(row.get('demande_id')),
+                'client_id'      : clean_nan(row.get('client_id')),
+                'raison_sociale' : clean_nan(row.get('raison_sociale')),
+                'libelle_demande': clean_nan(row.get('libelle_demande')),
+                'qte'            : clean_nan(row.get('qte')),
+                'motif'          : clean_nan(row.get('motif')),
+            })
+        return jsonify(result)
+    except Exception as e:
+        import traceback
+        return jsonify({'error': str(e), 'trace': traceback.format_exc()}), 500
+
+
+@app.route('/api/run-flux-b', methods=['POST'])
+def run_flux_b():
+    import subprocess, sys
+    try:
+        script = os.path.join(BASE_DIR, 'flux_b.py')
+        if not os.path.exists(script):
+            return jsonify({'error': f'Script introuvable : {script}'}), 404
+        result = subprocess.run(
+            [sys.executable, script],
+            capture_output=True, text=True, cwd=os.path.dirname(BASE_DIR)
+        )
+        if result.returncode != 0:
+            return jsonify({'error': 'flux_b.py a échoué', 'detail': result.stderr}), 500
+        return jsonify({
+            'message': 'Flux B exécuté avec succès.',
+            'output': result.stdout.strip()
+        })
+    except Exception as e:
+        import traceback
+        return jsonify({'error': str(e), 'trace': traceback.format_exc()}), 500
+
+
+# ─── Flux A Pipeline ──────────────────────────────────────────────────────────
+
 @app.route('/api/run-pipeline', methods=['POST'])
 def run_pipeline():
     import subprocess
@@ -189,7 +314,7 @@ def run_pipeline():
 
 @app.route('/')
 def index():
-    return "<h2>Fournitex ADV - Backend API</h2><p>Routes: /api/dashboard-stats, /api/anomalies, /api/outbox, /api/run-pipeline</p>"
+    return "<h2>Fournitex ADV - Backend API</h2><p>Routes: /api/dashboard-stats, /api/anomalies, /api/outbox, /api/run-pipeline, /api/devis, /api/devis/alertes, /api/devis/clarifications, /api/run-flux-b</p>"
 
 
 if __name__ == '__main__':

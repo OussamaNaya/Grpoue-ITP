@@ -1,0 +1,17 @@
+DESTINATAIRE : compta@opticien.vision.claire.fr
+OBJET : Votre devis n° DEV-F0023 — Fournitex
+============================================================
+
+Bonjour Emma Fontaine,
+Veuillez trouver notre devis n° DEV-F0023 d'un montant de 1077.30 € HT (1292.76 € TTC), valable 30 jours. Détail des lignes et remises appliquées ci-joint.
+Cordialement,
+Service commercial Fournitex
+
+Réf.          | Désignation                         |  Qté | PU HT €  | Rem%  | Total HT € | TVA%  | Total TTC€
+---------------------------------------------------------------------------------------------------------------
+PAP-MARK-4    | Marqueurs effaçables (lot de 4)     |   20 |     6.90 |   5.0 |     131.10 |    20 |     157.32
+PAP-CLAS-8    | Classeurs A4 dos 8 cm (lot de 10)   |   40 |    24.90 |   5.0 |     946.20 |    20 |    1135.44
+---------------------------------------------------------------------------------------------------------------
+TOTAL                                                        |    1077.30 |       |    1292.76
+
+Validité : jusqu'au 26/08/2026

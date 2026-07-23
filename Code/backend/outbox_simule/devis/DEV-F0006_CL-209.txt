@@ -1,0 +1,20 @@
+DESTINATAIRE : compta@studio.graphique.pixel.fr
+OBJET : Votre devis n° DEV-F0006 — Fournitex
+============================================================
+
+Bonjour Marc Roche,
+Veuillez trouver notre devis n° DEV-F0006 d'un montant de 1547.15 € HT (1856.58 € TTC), valable 30 jours. Détail des lignes et remises appliquées ci-joint.
+Cordialement,
+Service commercial Fournitex
+
+Réf.          | Désignation                         |  Qté | PU HT €  | Rem%  | Total HT € | TVA%  | Total TTC€
+---------------------------------------------------------------------------------------------------------------
+MOB-ARM-HT    | Armoire haute à rideaux             |    5 |   319.00 |   3.0 |    1547.15 |    20 |    1856.58
+---------------------------------------------------------------------------------------------------------------
+TOTAL                                                        |    1547.15 |       |    1856.58
+
+Validité : jusqu'au 26/08/2026
+
+
+--- LIGNES À CLARIFIER ---
+  • 140. Vous livrez au 3e étage sans ascenseur ? (qté: 5.0) — référence introuvable ou ambiguë

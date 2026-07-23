@@ -1,0 +1,17 @@
+DESTINATAIRE : compta@pharmacie.du.marche.fr
+OBJET : Votre devis n° DEV-F0015 — Fournitex
+============================================================
+
+Bonjour Paul Petit,
+Veuillez trouver notre devis n° DEV-F0015 d'un montant de 1765.57 € HT (2118.68 € TTC), valable 30 jours. Détail des lignes et remises appliquées ci-joint.
+Cordialement,
+Service commercial Fournitex
+
+Réf.          | Désignation                         |  Qté | PU HT €  | Rem%  | Total HT € | TVA%  | Total TTC€
+---------------------------------------------------------------------------------------------------------------
+MOB-CAI-3T    | Caisson 3 tiroirs à roulettes       |   15 |    89.00 |   5.0 |    1268.25 |    20 |    1521.90
+MOB-LAMP-LED  | Lampe de bureau LED                 |   15 |    34.90 |   5.0 |     497.32 |    20 |     596.78
+---------------------------------------------------------------------------------------------------------------
+TOTAL                                                        |    1765.57 |       |    2118.68
+
+Validité : jusqu'au 26/08/2026

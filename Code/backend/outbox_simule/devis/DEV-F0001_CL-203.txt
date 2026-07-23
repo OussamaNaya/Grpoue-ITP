@@ -1,0 +1,20 @@
+DESTINATAIRE : compta@garage.central.auto.fr
+OBJET : Votre devis n° DEV-F0001 — Fournitex
+============================================================
+
+Bonjour Léa Benali,
+Veuillez trouver notre devis n° DEV-F0001 d'un montant de 2610.60 € HT (3132.72 € TTC), valable 30 jours. Détail des lignes et remises appliquées ci-joint.
+Cordialement,
+Service commercial Fournitex
+
+Réf.          | Désignation                         |  Qté | PU HT €  | Rem%  | Total HT € | TVA%  | Total TTC€
+---------------------------------------------------------------------------------------------------------------
+MOB-BUR-140   | Bureau plateau 140x70               |   12 |   229.00 |   5.0 |    2610.60 |    20 |    3132.72
+---------------------------------------------------------------------------------------------------------------
+TOTAL                                                        |    2610.60 |       |    3132.72
+
+Validité : jusqu'au 26/08/2026
+
+
+--- LIGNES À CLARIFIER ---
+  • 140x70 pour notre nouvel open space ? Livraison souhaitée fin août (qté: 12.0) — référence introuvable ou ambiguë

@@ -1,0 +1,9 @@
+﻿horodatage;demande_id;client_id;type_alerte;detail
+2026-07-23 14:45:35;DEV-0009;CL-244;CLIENT_INCONNU;Client CL-244 absent du référentiel — prospect à qualifier. Devis généré sans remise contractuelle.
+2026-07-23 14:45:35;DEV-0011;CL-217;REMISE_HORS_GRILLE;Remise demandée 25.0% > plafond 18.0% (R10). Devis généré avec la remise maximale autorisée (18.0%). Validation humaine requise si accord exceptionnel souhaité.
+2026-07-23 14:45:35;DEV-0013;CL-236;MESSAGE_MIXTE_RECLAMATION;Message mixte détecté pour Nettoyage CleanPro (DEV-0013) : la partie réclamation est routée vers l'humain. La partie devis est traitée normalement.
+2026-07-23 14:45:35;DEV-0014;CL-225;MESSAGE_MIXTE_RECLAMATION;Message mixte détecté pour Opticien Vision Claire (DEV-0014) : la partie réclamation est routée vers l'humain. La partie devis est traitée normalement.
+2026-07-23 14:45:35;DEV-0015;CL-248;CLIENT_INCONNU;Client CL-248 absent du référentiel — prospect à qualifier. Devis généré sans remise contractuelle.
+2026-07-23 14:45:35;DEV-0016;CL-211;SECURITE_IBAN;IBAN/RIB détecté dans le message — masqué dans tous les journaux et sorties. Vérification humaine requise.
+2026-07-23 14:45:35;DEV-0018;CL-999;CLIENT_INCONNU;Client CL-999 absent du référentiel — prospect à qualifier. Devis généré sans remise contractuelle.
+2026-07-23 14:45:35;DEV-0019;CL-240;SECURITE_MANIPULATION;Instruction de manipulation tarifaire détectée et ignorée (R12). Message original conservé dans le journal interne.

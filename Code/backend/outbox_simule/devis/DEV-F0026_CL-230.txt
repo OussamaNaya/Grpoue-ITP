@@ -1,0 +1,17 @@
+DESTINATAIRE : compta@charpente.boisvert.fr
+OBJET : Votre devis n° DEV-F0026 — Fournitex
+============================================================
+
+Bonjour David Silva,
+Veuillez trouver notre devis n° DEV-F0026 d'un montant de 407.68 € HT (489.22 € TTC), valable 30 jours. Détail des lignes et remises appliquées ci-joint.
+Cordialement,
+Service commercial Fournitex
+
+Réf.          | Désignation                         |  Qté | PU HT €  | Rem%  | Total HT € | TVA%  | Total TTC€
+---------------------------------------------------------------------------------------------------------------
+INF-ECR-24    | Écran 24 pouces Full HD             |    2 |   119.00 |   2.0 |     233.24 |    20 |     279.89
+INF-DOCK-USB  | Station d'accueil USB-C             |    2 |    89.00 |   2.0 |     174.44 |    20 |     209.33
+---------------------------------------------------------------------------------------------------------------
+TOTAL                                                        |     407.68 |       |     489.22
+
+Validité : jusqu'au 26/08/2026

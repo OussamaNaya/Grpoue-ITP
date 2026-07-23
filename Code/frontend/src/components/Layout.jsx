@@ -7,6 +7,7 @@ export default function Layout({ children }) {
     { name: 'Dashboard', path: '/', icon: 'dashboard' },
     { name: 'Outbox', path: '/outbox', icon: 'outbox' },
     { name: 'Anomalies Center', path: '/anomalies', icon: 'warning' },
+    { name: 'Devis (Flux B)', path: '/devis', icon: 'request_quote' },
   ];
 
   return (

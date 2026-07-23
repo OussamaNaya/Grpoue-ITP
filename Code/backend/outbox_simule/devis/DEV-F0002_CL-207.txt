@@ -1,0 +1,20 @@
+DESTINATAIRE : compta@transports.rivoli.fr
+OBJET : Votre devis n° DEV-F0002 — Fournitex
+============================================================
+
+Bonjour Paul Garcia,
+Veuillez trouver notre devis n° DEV-F0002 d'un montant de 48.50 € HT (58.20 € TTC), valable 30 jours. Détail des lignes et remises appliquées ci-joint.
+Cordialement,
+Service commercial Fournitex
+
+Réf.          | Désignation                         |  Qté | PU HT €  | Rem%  | Total HT € | TVA%  | Total TTC€
+---------------------------------------------------------------------------------------------------------------
+PAP-STY-BL    | Stylo bille bleu (boîte de 50)      |    4 |    12.50 |   3.0 |      48.50 |    20 |      58.20
+---------------------------------------------------------------------------------------------------------------
+TOTAL                                                        |      48.50 |       |      58.20
+
+Validité : jusqu'au 26/08/2026
+
+
+--- LIGNES À CLARIFIER ---
+  • il nous faudrait  de papier A4 (qté: 60.0) — référence introuvable ou ambiguë
