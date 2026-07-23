@@ -29,3 +29,25 @@
 2026-07-23 14:45:35;DEV-0020;CL-202;DEVIS_GENERE;DEV-F0029 — 3 lignes chiffrées, 0 à clarifier — TTC: 9825.00€
 2026-07-23 14:45:35;DEV-0021;CL-223;MESSAGE_VIDE;Message vide — demande de précisions envoyée
 2026-07-23 14:45:35;DEV-0022;CL-234;DEVIS_GENERE;DEV-F0030 — 2 lignes chiffrées, 0 à clarifier — TTC: 389.13€
+2026-07-23 14:51:36;DEV-0001;CL-203;IGNORE_IDEMPOTENCE;Demande déjà traitée lors d'une exécution précédente
+2026-07-23 14:51:36;DEV-0002;CL-207;IGNORE_IDEMPOTENCE;Demande déjà traitée lors d'une exécution précédente
+2026-07-23 14:51:36;DEV-0003;CL-241;IGNORE_IDEMPOTENCE;Demande déjà traitée lors d'une exécution précédente
+2026-07-23 14:51:36;DEV-0004;CL-226;IGNORE_IDEMPOTENCE;Demande déjà traitée lors d'une exécution précédente
+2026-07-23 14:51:36;DEV-0005;CL-238;IGNORE_IDEMPOTENCE;Demande déjà traitée lors d'une exécution précédente
+2026-07-23 14:51:36;DEV-0006;CL-214;IGNORE_IDEMPOTENCE;Demande déjà traitée lors d'une exécution précédente
+2026-07-23 14:51:36;DEV-0007;CL-233;IGNORE_IDEMPOTENCE;Demande déjà traitée lors d'une exécution précédente
+2026-07-23 14:51:36;DEV-0008;CL-221;IGNORE_IDEMPOTENCE;Demande déjà traitée lors d'une exécution précédente
+2026-07-23 14:51:36;DEV-0009;CL-244;IGNORE_IDEMPOTENCE;Demande déjà traitée lors d'une exécution précédente
+2026-07-23 14:51:36;DEV-0010;CL-209;IGNORE_IDEMPOTENCE;Demande déjà traitée lors d'une exécution précédente
+2026-07-23 14:51:36;DEV-0011;CL-217;IGNORE_IDEMPOTENCE;Demande déjà traitée lors d'une exécution précédente
+2026-07-23 14:51:36;DEV-0012;CL-229;IGNORE_IDEMPOTENCE;Demande déjà traitée lors d'une exécution précédente
+2026-07-23 14:51:36;DEV-0013;CL-236;IGNORE_IDEMPOTENCE;Demande déjà traitée lors d'une exécution précédente
+2026-07-23 14:51:36;DEV-0014;CL-225;IGNORE_IDEMPOTENCE;Demande déjà traitée lors d'une exécution précédente
+2026-07-23 14:51:36;DEV-0015;CL-248;IGNORE_IDEMPOTENCE;Demande déjà traitée lors d'une exécution précédente
+2026-07-23 14:51:36;DEV-0016;CL-211;IGNORE_IDEMPOTENCE;Demande déjà traitée lors d'une exécution précédente
+2026-07-23 14:51:36;DEV-0017;CL-230;IGNORE_IDEMPOTENCE;Demande déjà traitée lors d'une exécution précédente
+2026-07-23 14:51:36;DEV-0018;CL-999;IGNORE_IDEMPOTENCE;Demande déjà traitée lors d'une exécution précédente
+2026-07-23 14:51:36;DEV-0019;CL-240;IGNORE_IDEMPOTENCE;Demande déjà traitée lors d'une exécution précédente
+2026-07-23 14:51:36;DEV-0020;CL-202;IGNORE_IDEMPOTENCE;Demande déjà traitée lors d'une exécution précédente
+2026-07-23 14:51:36;DEV-0021;CL-223;IGNORE_IDEMPOTENCE;Demande déjà traitée lors d'une exécution précédente
+2026-07-23 14:51:36;DEV-0022;CL-234;IGNORE_IDEMPOTENCE;Demande déjà traitée lors d'une exécution précédente
