@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import logo from '../assets/logo.svg';
 
 export default function Layout({ children }) {
   const location = useLocation();
@@ -14,9 +15,12 @@ export default function Layout({ children }) {
     <div className="bg-background text-on-surface antialiased">
       {/* SideNavBar */}
       <aside className="w-[260px] h-screen fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant flex flex-col pt-6 pb-4 z-50">
-        <div className="px-6 mb-8">
-          <h1 className="text-[24px] font-bold text-primary leading-tight">Fournitex ADV</h1>
-          <p className="text-[12px] text-on-surface-variant font-semibold mt-1 tracking-wider">COLLECTION & RECOVERY</p>
+        <div className="px-6 mb-8 flex flex-col gap-3">
+          <img src={logo} alt="Fournitex Logo" className="h-20 w-auto object-contain self-start -ml-2" />
+          <div>
+            <h1 className="text-[24px] font-bold text-primary leading-tight">Fournitex ADV</h1>
+            <p className="text-[12px] text-on-surface-variant font-semibold mt-1 tracking-wider">COLLECTION & RECOVERY</p>
+          </div>
         </div>
         <nav className="flex-1 space-y-1">
           {navItems.map((item) => {
